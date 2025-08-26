@@ -1,0 +1,3892 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Catálogo de Productos - PixelForge 3D Store</title>
+    <meta
+      name="description"
+      content="Explora nuestra colección completa de productos 3D impresos. Gaming, hogar y diseños personalizados con filtros inteligentes y búsqueda avanzada."
+    />
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <script
+      type="module"
+      src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Fpixelforgu2698back.builtwithrocket.new&_be=https%3A%2F%2Fapplication.rocket.new&_v=0.1.6"
+    ></script>
+  </head>
+  <body class="bg-background text-text-primary">
+    <!-- Navigation Header -->
+    <header class="bg-surface shadow-md sticky top-0 z-50">
+      <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-16">
+          <!-- Logo -->
+          <div class="flex items-center">
+            <a href="homepage.html" class="flex items-center space-x-2">
+              <svg
+                class="w-8 h-8 text-primary"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"
+                />
+              </svg>
+              <span class="font-poppins font-bold text-xl text-primary"
+                >PixelForge</span
+              >
+            </a>
+          </div>
+
+          <!-- Desktop Navigation -->
+          <div class="hidden md:flex items-center space-x-8">
+            <a href="product_catalog.html" class="text-primary font-semibold"
+              >Catálogo</a
+            >
+            <a
+              href="custom_design_service.html"
+              class="text-text-secondary hover:text-primary transition-colors duration-200"
+              >Personalización</a
+            >
+            <a
+              href="about_us.html"
+              class="text-text-secondary hover:text-primary transition-colors duration-200"
+              >Nosotros</a
+            >
+
+            <a href="contact_hub.html" class="btn-primary">Contacto</a>
+          </div>
+
+          <!-- Mobile Menu Button -->
+          <div class="md:hidden">
+            <button
+              id="mobile-menu-btn"
+              class="text-text-secondary hover:text-primary"
+            >
+              <svg
+                class="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="md:hidden hidden pb-4">
+          <div class="flex flex-col space-y-2">
+            <a
+              href="product_catalog.html"
+              class="text-primary font-semibold py-2"
+              >Catálogo</a
+            >
+            <a
+              href="custom_design_service.html"
+              class="text-text-secondary hover:text-primary py-2"
+              >Personalización</a
+            >
+            <a
+              href="about_us.html"
+              class="text-text-secondary hover:text-primary py-2"
+              >Nosotros</a
+            >
+            <a
+              href="contact_hub.html#testimonios"
+              class="text-text-secondary hover:text-primary py-2"
+              >Testimonios</a
+            >
+            <a href="contact_hub.html" class="btn-primary mt-2">Contacto</a>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Page Header -->
+    <section class="bg-surface py-12">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center">
+          <h1 class="font-poppins font-bold text-4xl md:text-5xl mb-4">
+            Catálogo de <span class="text-gradient">Productos</span>
+          </h1>
+          <p class="text-xl text-text-secondary max-w-2xl mx-auto">
+            Descubre nuestra colección completa de productos 3D impresos con
+            calidad premium
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="py-8">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col lg:flex-row gap-8">
+          <!-- Sidebar Filters -->
+          <div class="lg:w-1/4">
+            <div class="sticky top-24">
+              <!-- Mobile Filter Toggle -->
+              <div class="lg:hidden mb-4">
+                <button
+                  id="filter-toggle"
+                  class="w-full bg-primary text-white px-4 py-3 rounded-lg font-poppins font-semibold flex items-center justify-center"
+                >
+                  <svg
+                    class="w-5 h-5 mr-2"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z"
+                    />
+                  </svg>
+                  Filtros
+                </button>
+              </div>
+
+              <!-- panel filtros -->
+              <div
+                id="filter-panel"
+                class="bg-surface rounded-lg shadow-md p-6 space-y-6 hidden lg:block"
+              >
+                <!-- buscar -->
+                <div>
+                  <label class="block text-sm font-poppins font-semibold mb-2"
+                    >Buscar Productos</label
+                  >
+                  <div class="relative">
+                    <input
+                      type="text"
+                      id="search-input"
+                      placeholder="Buscar..."
+                      class="input-field pr-10"
+                    />
+                    <svg
+                      class="absolute right-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-text-secondary"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                      />
+                    </svg>
+                  </div>
+                </div>
+
+                <!-- Categorías -->
+                <div>
+                  <h3 class="font-poppins font-semibold text-lg mb-4">
+                    Categorías
+                  </h3>
+                  <div class="space-y-3">
+                    <label class="flex items-center cursor-pointer">
+                      <input
+                        type="checkbox"
+                        class="category-filter rounded text-primary focus:ring-primary"
+                        value="all"
+                        checked
+                      />
+                      <span class="ml-3 text-text-primary">Todos</span>
+                      <span
+                        class="ml-auto text-sm text-text-secondary category-count"
+                        data-category="all"
+                        >(4)</span
+                      >
+                    </label>
+                    <label class="flex items-center cursor-pointer">
+                      <input
+                        type="checkbox"
+                        class="category-filter rounded text-primary focus:ring-primary"
+                        value="gaming"
+                      />
+                      <span class="ml-3 text-text-primary">Gaming</span>
+                      <span
+                        class="ml-auto text-sm text-text-secondary category-count"
+                        data-category="gaming"
+                        >(1)</span
+                      >
+                    </label>
+                    <label class="flex items-center cursor-pointer">
+                      <input
+                        type="checkbox"
+                        class="category-filter rounded text-primary focus:ring-primary"
+                        value="hogar"
+                      />
+                      <span class="ml-3 text-text-primary">Hogar</span>
+                      <span
+                        class="ml-auto text-sm text-text-secondary category-count"
+                        data-category="hogar"
+                        >(1)</span
+                      >
+                    </label>
+                    <label class="flex items-center cursor-pointer">
+                      <input
+                        type="checkbox"
+                        class="category-filter rounded text-primary focus:ring-primary"
+                        value="soportetelefono"
+                      />
+                      <span class="ml-3 text-text-primary"
+                        >Soporte de Teléfono</span
+                      >
+                      <span
+                        class="ml-auto text-sm text-text-secondary category-count"
+                        data-category="soportetelefono"
+                        >(1)</span
+                      >
+                    </label>
+                    <label class="flex items-center cursor-pointer">
+                      <input
+                        type="checkbox"
+                        class="category-filter rounded text-primary focus:ring-primary"
+                        value="personalizados"
+                      />
+                      <span class="ml-3 text-text-primary">Personalizados</span>
+                      <span
+                        class="ml-auto text-sm text-text-secondary category-count"
+                        data-category="personalizados"
+                        >(1)</span
+                      >
+                    </label>
+                  </div>
+                </div>
+
+                <!-- Rango de Precio -->
+                <div>
+                  <h3 class="font-poppins font-semibold text-lg mb-4">
+                    Rango de Precio
+                  </h3>
+                  <div class="space-y-3">
+                    <label class="flex items-center cursor-pointer">
+                      <input
+                        type="radio"
+                        name="price-range"
+                        class="text-primary focus:ring-primary"
+                        value="all"
+                        checked
+                      />
+                      <span class="ml-3 text-text-primary"
+                        >Todos los precios</span
+                      >
+                    </label>
+
+                    <label class="flex items-center cursor-pointer">
+                      <input
+                        type="radio"
+                        name="price-range"
+                        class="text-primary focus:ring-primary"
+                        value="1.000-2.500"
+                      />
+                      <span class="ml-3 text-text-primary"
+                        >$1,000 - $2,500</span
+                      >
+                    </label>
+                    <label class="flex items-center cursor-pointer">
+                      <input
+                        type="radio"
+                        name="price-range"
+                        class="text-primary focus:ring-primary"
+                        value="2.500-5.000"
+                      />
+                      <span class="ml-3 text-text-primary"
+                        >$2,500 - $5,000</span
+                      >
+                    </label>
+                    <label class="flex items-center cursor-pointer">
+                      <input
+                        type="radio"
+                        name="price-range"
+                        class="text-primary focus:ring-primary"
+                        value="5.000+"
+                      />
+                      <span class="ml-3 text-text-primary">$5,000+</span>
+                    </label>
+                  </div>
+                </div>
+
+                <!-- nivel de Complejidad -->
+                <div>
+                  <h3 class="font-poppins font-semibold text-lg mb-4">
+                    Complejidad
+                  </h3>
+                  <div class="space-y-3">
+                    <label class="flex items-center cursor-pointer">
+                      <input
+                        type="checkbox"
+                        class="complexity-filter rounded text-primary focus:ring-primary"
+                        value="all"
+                        checked
+                      />
+                      <span class="ml-3 text-text-primary">Todos</span>
+                    </label>
+                    <label class="flex items-center cursor-pointer">
+                      <input
+                        type="checkbox"
+                        class="complexity-filter rounded text-primary focus:ring-primary"
+                        value="basico"
+                      />
+                      <span class="ml-3 text-text-primary">Básico</span>
+                    </label>
+                    <label class="flex items-center cursor-pointer">
+                      <input
+                        type="checkbox"
+                        class="complexity-filter rounded text-primary focus:ring-primary"
+                        value="intermedio"
+                      />
+                      <span class="ml-3 text-text-primary">Intermedio</span>
+                    </label>
+                    <label class="flex items-center cursor-pointer">
+                      <input
+                        type="checkbox"
+                        class="complexity-filter rounded text-primary focus:ring-primary"
+                        value="avanzado"
+                      />
+                      <span class="ml-3 text-text-primary">Avanzado</span>
+                    </label>
+                  </div>
+                </div>
+
+                <!-- Limpiar Filtros -->
+                <button
+                  id="clear-filters"
+                  class="w-full bg-secondary text-white px-4 py-2 rounded-lg font-poppins font-medium hover:bg-secondary-700 transition-colors duration-200"
+                >
+                  Limpiar Filtros
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Products Grid -->
+          <div class="lg:w-3/4">
+            <!-- Sort and Results -->
+            <div
+              class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6 gap-4"
+            >
+              <div class="flex items-center space-x-4">
+                <label class="text-sm font-poppins font-medium"
+                  >Ordenar por:</label
+                >
+                <select id="sort-select" class="input-field w-auto min-w-48">
+                  <option value="popular">Más Popular</option>
+                  <option value="price-low">Precio: Menor a Mayor</option>
+                  <option value="price-high">Precio: Mayor a Menor</option>
+                  <option value="newest">Nuevos Productos</option>
+                  <option value="print-time">Tiempo de Impresión</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Products Grid -->
+            <div
+              id="products-grid"
+              class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-8"
+            >
+              <!-- Producto 1 -->
+              <div
+                class="product-card card group hover:shadow-xl transition-all duration-300 cursor-pointer"
+                data-category="gaming"
+                data-material="pla"
+                data-price="6.500"
+                data-complexity="intermedio"
+                onclick="window.location.href='dcalaberainfernal.html'"
+              >
+                <div class="relative overflow-hidden rounded-lg mb-4">
+                  <img
+                    src="../public/img/home/calaca1.png"
+                    alt="Soporte para Celular"
+                    class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                    onerror="this.src='https://images.unsplash.com/photo-1586023492125-27b2c045efd7?q=80&w=2958&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                  />
+                  <div
+                    class="absolute top-3 left-3 bg-primary text-white px-2 py-1 rounded-full text-xs font-medium"
+                  >
+                    PLA
+                  </div>
+                  <div
+                    class="absolute bottom-3 right-3 bg-secondary-900 bg-opacity-80 text-white px-2 py-1 rounded-full text-xs flex items-center"
+                  >
+                    <svg
+                      class="w-3 h-3 mr-1"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        d="M10 2L3 7v11a1 1 0 001 1h3v-7h6v7h3a1 1 0 001-1V7l-7-5z"
+                      />
+                    </svg>
+                    9h
+                  </div>
+                </div>
+                <h3 class="font-poppins font-semibold text-lg mb-2">
+                  Cráneo Infernal – Edición Dominus
+                </h3>
+                <p class="text-text-secondary text-sm mb-3">
+                  Forjado en las llamas de la batalla. Nacido del caos. Hecho
+                  para leyendas.
+                </p>
+                <div class="flex items-center justify-between mb-4">
+                  <span class="font-poppins font-bold text-xl text-primary"
+                    >$6.500</span
+                  >
+                  <div class="flex items-center text-xs text-text-secondary">
+                    <svg
+                      class="w-4 h-4 mr-1 text-accent"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                    En stock
+                  </div>
+                </div>
+                <a
+                  href="dcalaberainfernal.html"
+                  class="w-full bg-accent text-white px-4 py-2 rounded-lg font-poppins font-medium hover:bg-accent-600 transition-colors duration-200 text-center block"
+                >
+                  Ver Producto
+                </a>
+              </div>
+
+              <!-- Producto 2 -->
+              <div
+                class="product-card card group hover:shadow-xl transition-all duration-300 cursor-pointer"
+                data-category="soportetelefono"
+                data-material="pla"
+                data-price="3.000"
+                data-complexity="basico"
+                onclick="window.location.href='dHeartLoop.html'"
+              >
+                <div class="relative overflow-hidden rounded-lg mb-4">
+                  <img
+                    src="../public/img/catalogo/HeartLoop/HeartLoop1.png"
+                    alt="Soporte para Celular"
+                    class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                    onerror="this.src='https://images.unsplash.com/photo-1586023492125-27b2c045efd7?q=80&w=2958&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                  />
+                  <div
+                    class="absolute top-3 left-3 bg-primary text-white px-2 py-1 rounded-full text-xs font-medium"
+                  >
+                    PLA
+                  </div>
+                  <div
+                    class="absolute bottom-3 right-3 bg-secondary-900 bg-opacity-80 text-white px-2 py-1 rounded-full text-xs flex items-center"
+                  >
+                    <svg
+                      class="w-3 h-3 mr-1"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        d="M10 2L3 7v11a1 1 0 001 1h3v-7h6v7h3a1 1 0 001-1V7l-7-5z"
+                      />
+                    </svg>
+                    2h
+                  </div>
+                </div>
+                <h3 class="font-poppins font-semibold text-lg mb-2">
+                  HeartLoop - Soporte para Celular
+                </h3>
+                <p class="text-text-secondary text-sm mb-3">
+                  Un toque de amor para tu teléfono. Mantén tu dispositivo
+                  seguro y siempre a la vista.
+                </p>
+                <div class="flex items-center justify-between mb-4">
+                  <span class="font-poppins font-bold text-xl text-primary"
+                    >$3.000</span
+                  >
+                  <div class="flex items-center text-xs text-text-secondary">
+                    <svg
+                      class="w-4 h-4 mr-1 text-accent"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                    En stock
+                  </div>
+                </div>
+                <a
+                  href="dHeartLoop.html"
+                  class="w-full bg-accent text-white px-4 py-2 rounded-lg font-poppins font-medium hover:bg-accent-600 transition-colors duration-200 text-center block"
+                >
+                  Ver Producto
+                </a>
+              </div>
+
+              <!-- Producto 3 -->
+              <div
+                class="product-card card group hover:shadow-xl transition-all duration-300 cursor-pointer"
+                data-category="hogar"
+                data-material="pla"
+                data-price="3.000"
+                data-complexity="intermedio"
+                onclick="window.location.href='dovejita.html'"
+              >
+                <div class="relative overflow-hidden rounded-lg mb-4">
+                  <img
+                    src="../public/img/catalogo/Ovejita/oveja1.jpeg"
+                    alt="Ovejita - Confort"
+                    class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                    onerror="this.src='https://images.unsplash.com/photo-1586023492125-27b2c045efd7?q=80&w=2958&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                  />
+                  <div
+                    class="absolute top-3 left-3 bg-primary text-white px-2 py-1 rounded-full text-xs font-medium"
+                  >
+                    PLA
+                  </div>
+                  <div
+                    class="absolute bottom-3 right-3 bg-secondary-900 bg-opacity-80 text-white px-2 py-1 rounded-full text-xs flex items-center"
+                  >
+                    <svg
+                      class="w-3 h-3 mr-1"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        d="M10 2L3 7v11a1 1 0 001 1h3v-7h6v7h3a1 1 0 001-1V7l-7-5z"
+                      />
+                    </svg>
+                    2h
+                  </div>
+                </div>
+                <h3 class="font-poppins font-semibold text-lg mb-2">
+                  Ovejita – Confort
+                </h3>
+                <p class="text-text-secondary text-sm mb-3">
+                  Ternura y orden en tu baño con la Ovejita, siempre suave y
+                  adorable.
+                </p>
+                <div class="flex items-center justify-between mb-4">
+                  <span class="font-poppins font-bold text-xl text-primary"
+                    >$3.000</span
+                  >
+                  <div class="flex items-center text-xs text-text-secondary">
+                    <svg
+                      class="w-4 h-4 mr-1 text-accent"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                    En stock
+                  </div>
+                </div>
+                <a
+                  href="dovejita.html"
+                  class="w-full bg-accent text-white px-4 py-2 rounded-lg font-poppins font-medium hover:bg-accent-600 transition-colors duration-200 text-center block"
+                >
+                  Ver Producto
+                </a>
+              </div>
+
+              <!-- Producto 4 - Logotipo League of Legends -->
+              <div
+                class="product-card card group hover:shadow-xl transition-all duration-300 cursor-pointer"
+                data-category="gaming"
+                data-material="pla"
+                data-price="4.500"
+                data-complexity="intermedio"
+                onclick="window.location.href='dlgleagueoflegends.html'"
+              >
+                <div class="relative overflow-hidden rounded-lg mb-4">
+                  <img
+                    src="../public/img/catalogo/lg-LeagueofLegends/leagueoflegends.webp"
+                    alt="Logotipo decorativo League of Legends"
+                    class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                    onerror="this.src='https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                  />
+                  <div
+                    class="absolute top-3 left-3 bg-primary text-white px-2 py-1 rounded-full text-xs font-medium"
+                  >
+                    PLA
+                  </div>
+                  <div
+                    class="absolute bottom-3 right-3 bg-secondary-900 bg-opacity-80 text-white px-2 py-1 rounded-full text-xs flex items-center"
+                  >
+                    <svg
+                      class="w-3 h-3 mr-1"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        d="M10 2L3 7v11a1 1 0 001 1h3v-7h6v7h3a1 1 0 001-1V7l-7-5z"
+                      />
+                    </svg>
+                    2h
+                  </div>
+                </div>
+                <h3 class="font-poppins font-semibold text-lg mb-2">
+                  Logotipo League of Legends - Coleccionista
+                </h3>
+                <p class="text-text-secondary text-sm mb-3">
+                  Decora tu espacio gamer con un símbolo legendario que mostrará
+                  tu pasión por League of Legends.
+                </p>
+                <div class="flex items-center justify-between mb-4">
+                  <span class="font-poppins font-bold text-xl text-primary"
+                    >$4.500</span
+                  >
+                  <div class="flex items-center text-xs text-text-secondary">
+                    <svg
+                      class="w-4 h-4 mr-1 text-accent"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                    En stock
+                  </div>
+                </div>
+                <a
+                  href="dlogoleagueoflegends.html"
+                  class="w-full bg-accent text-white px-4 py-2 rounded-lg font-poppins font-medium hover:bg-accent-600 transition-colors duration-200 text-center block"
+                >
+                  Ver Producto
+                </a>
+              </div>
+
+              <!-- Producto 2 - Soporte teléfono panal abeja -->
+              <div
+                class="product-card card group hover:shadow-xl transition-all duration-300 cursor-pointer"
+                data-category="soportetelefono"
+                data-material="pla"
+                data-price="3.500"
+                data-complexity="basico"
+                onclick="window.location.href='dsoportetelefonopanal.html'"
+              >
+                <div class="relative overflow-hidden rounded-lg mb-4">
+                  <img
+                    src="../public/img/catalogo/Soporte-TelefonoHexagonal/soporteexagonal.webp"
+                    alt="Soporte teléfono panal abeja"
+                    class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                    onerror="this.src='https://images.unsplash.com/photo-1606800052052-a08af7148866?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                  />
+                  <div
+                    class="absolute top-3 left-3 bg-primary text-white px-2 py-1 rounded-full text-xs font-medium"
+                  >
+                    PLA
+                  </div>
+                  <div
+                    class="absolute bottom-3 right-3 bg-secondary-900 bg-opacity-80 text-white px-2 py-1 rounded-full text-xs flex items-center"
+                  >
+                    <svg
+                      class="w-3 h-3 mr-1"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        d="M10 2L3 7v11a1 1 0 001 1h3v-7h6v7h3a1 1 0 001-1V7l-7-5z"
+                      />
+                    </svg>
+                    2h
+                  </div>
+                </div>
+                <h3 class="font-poppins font-semibold text-lg mb-2">
+                  Soporte Celular AirFlow Panal
+                </h3>
+                <p class="text-text-secondary text-sm mb-3">
+                  Mantén tu teléfono seguro y fresco con diseño panal de abeja
+                </p>
+                <div class="flex items-center justify-between mb-4">
+                  <span class="font-poppins font-bold text-xl text-primary">
+                    $3.500
+                  </span>
+                  <div class="flex items-center text-xs text-text-secondary">
+                    <svg
+                      class="w-4 h-4 mr-1 text-accent"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                    En stock
+                  </div>
+                </div>
+                <a
+                  href="dsoportetelefonopanal.html"
+                  class="w-full bg-accent text-white px-4 py-2 rounded-lg font-poppins font-medium hover:bg-accent-600 transition-colors duration-200 text-center block"
+                >
+                  Ver Producto
+                </a>
+              </div>
+
+              <!-- Producto 3 - Soporte mando PS4/Xbox -->
+              <div
+                class="product-card card group hover:shadow-xl transition-all duration-300 cursor-pointer"
+                data-category="gaming"
+                data-material="pla"
+                data-price="5.000"
+                data-complexity="intermedio"
+                onclick="window.location.href='dportamandofortnite.html'"
+              >
+                <div class="relative overflow-hidden rounded-lg mb-4">
+                  <img
+                    src="../public/img/catalogo/Soporte-mandos_fortnite/mandosfortnite.webp"
+                    alt="Soporte mando PS4/Xbox"
+                    class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                    onerror="this.src='https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                  />
+                  <div
+                    class="absolute top-3 left-3 bg-primary text-white px-2 py-1 rounded-full text-xs font-medium"
+                  >
+                    PLA
+                  </div>
+                  <div
+                    class="absolute bottom-3 right-3 bg-secondary-900 bg-opacity-80 text-white px-2 py-1 rounded-full text-xs flex items-center"
+                  >
+                    <svg
+                      class="w-3 h-3 mr-1"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        d="M10 2L3 7v11a1 1 0 001 1h3v-7h6v7h3a1 1 0 001-1V7l-7-5z"
+                      />
+                    </svg>
+                    3h
+                  </div>
+                </div>
+                <h3 class="font-poppins font-semibold text-lg mb-2">
+                  Soporte Gamer para Mandos PS4 y Xbox – Fortnite Edition
+                </h3>
+                <p class="text-text-secondary text-sm mb-3">
+                  Organiza tus controles y presume tu pasión Fortnite en tu
+                  setup gamer
+                </p>
+                <div class="flex items-center justify-between mb-4">
+                  <span class="font-poppins font-bold text-xl text-primary">
+                    $5.000
+                  </span>
+                  <div class="flex items-center text-xs text-text-secondary">
+                    <svg
+                      class="w-4 h-4 mr-1 text-accent"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                    En stock
+                  </div>
+                </div>
+                <a
+                  href="dportamandofortnite.html"
+                  class="w-full bg-accent text-white px-4 py-2 rounded-lg font-poppins font-medium hover:bg-accent-600 transition-colors duration-200 text-center block"
+                >
+                  Ver Producto
+                </a>
+              </div>
+
+              <!-- Producto 4 - Logotipo Call of Duty -->
+              <div
+                class="product-card card group hover:shadow-xl transition-all duration-300 cursor-pointer"
+                data-category="gaming"
+                data-material="pla"
+                data-price="4.800"
+                data-complexity="intermedio"
+                onclick="window.location.href='dlgcallofdutty.html'"
+              >
+                <div class="relative overflow-hidden rounded-lg mb-4">
+                  <img
+                    src="../public/img/catalogo/lg-CallofDutty/callofduty.webp"
+                    alt="Logotipo Call of Duty"
+                    class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                    onerror="this.src='https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                  />
+                  <div
+                    class="absolute top-3 left-3 bg-primary text-white px-2 py-1 rounded-full text-xs font-medium"
+                  >
+                    PLA
+                  </div>
+                  <div
+                    class="absolute bottom-3 right-3 bg-secondary-900 bg-opacity-80 text-white px-2 py-1 rounded-full text-xs flex items-center"
+                  >
+                    <svg
+                      class="w-3 h-3 mr-1"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        d="M10 2L3 7v11a1 1 0 001 1h3v-7h6v7h3a1 1 0 001-1V7l-7-5z"
+                      />
+                    </svg>
+                    2h
+                  </div>
+                </div>
+                <h3 class="font-poppins font-semibold text-lg mb-2">
+                  Logotipo Call of Duty
+                </h3>
+                <p class="text-text-secondary text-sm mb-3">
+                  Exhibe con orgullo tu afición por Call of Duty y decora tu
+                  setup gamer con autenticidad.
+                </p>
+                <div class="flex items-center justify-between mb-4">
+                  <span class="font-poppins font-bold text-xl text-primary">
+                    $4.800
+                  </span>
+                  <div class="flex items-center text-xs text-text-secondary">
+                    <svg
+                      class="w-4 h-4 mr-1 text-accent"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                    En stock
+                  </div>
+                </div>
+                <a
+                  href="dlgcallofdutty.html"
+                  class="w-full bg-accent text-white px-4 py-2 rounded-lg font-poppins font-medium hover:bg-accent-600 transition-colors duration-200 text-center block"
+                >
+                  Ver Producto
+                </a>
+              </div>
+
+              <!-- Producto 5 - Soporte PS5 DualSense -->
+              <div
+                class="product-card card group hover:shadow-xl transition-all duration-300 cursor-pointer"
+                data-category="gaming"
+                data-material="pla"
+                data-price="5.500"
+                data-complexity="intermedio"
+                onclick="window.location.href='dsoporteps5.html'"
+              >
+                <div class="relative overflow-hidden rounded-lg mb-4">
+                  <img
+                    src="../public/img/catalogo/soporte-mando-ps5-logostation/mandops5logoestation.webp"
+                    alt="Soporte PS5 DualSense"
+                    class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                    onerror="this.src='https://images.unsplash.com/photo-1607853202273-797f1c22a38e?q=80&w=2827&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                  />
+                  <div
+                    class="absolute top-3 left-3 bg-primary text-white px-2 py-1 rounded-full text-xs font-medium"
+                  >
+                    PLA
+                  </div>
+                  <div
+                    class="absolute bottom-3 right-3 bg-secondary-900 bg-opacity-80 text-white px-2 py-1 rounded-full text-xs flex items-center"
+                  >
+                    <svg
+                      class="w-3 h-3 mr-1"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        d="M10 2L3 7v11a1 1 0 001 1h3v-7h6v7h3a1 1 0 001-1V7l-7-5z"
+                      />
+                    </svg>
+                    3h
+                  </div>
+                </div>
+                <h3 class="font-poppins font-semibold text-lg mb-2">
+                  Soporte PS5 DualSense
+                </h3>
+                <p class="text-text-secondary text-sm mb-3">
+                  Protege y exhibe tu mando PS5 con un soporte diseñado para
+                  elegancia y funcionalidad máximas.
+                </p>
+                <div class="flex items-center justify-between mb-4">
+                  <span class="font-poppins font-bold text-xl text-primary"
+                    >$5.500</span
+                  >
+                  <div class="flex items-center text-xs text-text-secondary">
+                    <svg
+                      class="w-4 h-4 mr-1 text-accent"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                    En stock
+                  </div>
+                </div>
+                <a
+                  href="dsoporteps5.html"
+                  class="w-full bg-accent text-white px-4 py-2 rounded-lg font-poppins font-medium hover:bg-accent-600 transition-colors duration-200 text-center block"
+                  >Ver Producto</a
+                >
+              </div>
+
+              <!-- Producto 6 - Soporte doble PS5 + audífono -->
+              <div
+                class="product-card card group hover:shadow-xl transition-all duration-300 cursor-pointer"
+                data-category="gaming"
+                data-material="pla"
+                data-price="7.200"
+                data-complexity="avanzado"
+                onclick="window.location.href='dsoportedobleps5.html'"
+              >
+                <div class="relative overflow-hidden rounded-lg mb-4">
+                  <img
+                    src="../public/img/catalogo/soportedoble-mandosps5 + audifonos/soportedoblemandotyaudidono.webp"
+                    alt="Soporte doble PS5 + audífono"
+                    class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                    onerror="this.src='https://images.unsplash.com/photo-1607853202273-797f1c22a38e?q=80&w=2827&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                  />
+                  <div
+                    class="absolute top-3 left-3 bg-primary text-white px-2 py-1 rounded-full text-xs font-medium"
+                  >
+                    PLA
+                  </div>
+                  <div
+                    class="absolute bottom-3 right-3 bg-secondary-900 bg-opacity-80 text-white px-2 py-1 rounded-full text-xs flex items-center"
+                  >
+                    <svg
+                      class="w-3 h-3 mr-1"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        d="M10 2L3 7v11a1 1 0 001 1h3v-7h6v7h3a1 1 0 001-1V7l-7-5z"
+                      />
+                    </svg>
+                    4h
+                  </div>
+                </div>
+                <h3 class="font-poppins font-semibold text-lg mb-2">
+                  Soporte Doble PS5 + Audífono
+                </h3>
+                <p class="text-text-secondary text-sm mb-3">
+                  Ahorra espacio y mantén todo organizado con estilo gamer para
+                  tus sesiones de juego más largas.
+                </p>
+                <div class="flex items-center justify-between mb-4">
+                  <span class="font-poppins font-bold text-xl text-primary"
+                    >$7.200</span
+                  >
+                  <div class="flex items-center text-xs text-text-secondary">
+                    <svg
+                      class="w-4 h-4 mr-1 text-accent"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                    En stock
+                  </div>
+                </div>
+                <a
+                  href="dsoportedobleps5.html"
+                  class="w-full bg-accent text-white px-4 py-2 rounded-lg font-poppins font-medium hover:bg-accent-600 transition-colors duration-200 text-center block"
+                  >Ver Producto</a
+                >
+              </div>
+
+              <!-- Producto 7 - Soporte Spiderman -->
+              <div
+                class="product-card card group hover:shadow-xl transition-all duration-300 cursor-pointer"
+                data-category="gaming"
+                data-material="pla"
+                data-price="6.500"
+                data-complexity="intermedio"
+                onclick="window.location.href='dspiderman.html'"
+              >
+                <div class="relative overflow-hidden rounded-lg mb-4">
+                  <img
+                    src="../public/img/catalogo/soportemandospiderman/soportemandospiderma.webp"
+                    alt="Soporte Spiderman"
+                    class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                    onerror="this.src='https://images.unsplash.com/photo-1633613286848-e6f43bbafb8d?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                  />
+                  <div
+                    class="absolute top-3 left-3 bg-primary text-white px-2 py-1 rounded-full text-xs font-medium"
+                  >
+                    PLA
+                  </div>
+                  <div
+                    class="absolute bottom-3 right-3 bg-secondary-900 bg-opacity-80 text-white px-2 py-1 rounded-full text-xs flex items-center"
+                  >
+                    <svg
+                      class="w-3 h-3 mr-1"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        d="M10 2L3 7v11a1 1 0 001 1h3v-7h6v7h3a1 1 0 001-1V7l-7-5z"
+                      />
+                    </svg>
+                    3h
+                  </div>
+                </div>
+                <h3 class="font-poppins font-semibold text-lg mb-2">
+                  Soporte Spiderman
+                </h3>
+                <p class="text-text-secondary text-sm mb-3">
+                  Añade un toque heroico a tu setup mientras organizas tus
+                  mandos con estilo arácnido impresionante.
+                </p>
+                <div class="flex items-center justify-between mb-4">
+                  <span class="font-poppins font-bold text-xl text-primary"
+                    >$6.500</span
+                  >
+                  <div class="flex items-center text-xs text-text-secondary">
+                    <svg
+                      class="w-4 h-4 mr-1 text-accent"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                    En stock
+                  </div>
+                </div>
+                <a
+                  href="dspiderman.html"
+                  class="w-full bg-accent text-white px-4 py-2 rounded-lg font-poppins font-medium hover:bg-accent-600 transition-colors duration-200 text-center block"
+                  >Ver Producto</a
+                >
+              </div>
+
+              <!-- Producto 8 - Llavero Spotify -->
+              <div
+                class="product-card card group hover:shadow-xl transition-all duration-300 cursor-pointer"
+                data-category="accesorios"
+                data-material="pla"
+                data-price="2.500"
+                data-complexity="basico"
+                onclick="window.location.href='dllaverospotify.html'"
+              >
+                <div class="relative overflow-hidden rounded-lg mb-4">
+                  <img
+                    src="../public/img/catalogo/llaverosporify/llaverospotify.webp"
+                    alt="Llavero Spotify"
+                    class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                    onerror="this.src='https://images.unsplash.com/photo-1614680376573-df3480f0c6ff?q=80&w=2874&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                  />
+                  <div
+                    class="absolute top-3 left-3 bg-primary text-white px-2 py-1 rounded-full text-xs font-medium"
+                  >
+                    PLA
+                  </div>
+                  <div
+                    class="absolute bottom-3 right-3 bg-secondary-900 bg-opacity-80 text-white px-2 py-1 rounded-full text-xs flex items-center"
+                  >
+                    <svg
+                      class="w-3 h-3 mr-1"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        d="M10 2L3 7v11a1 1 0 001 1h3v-7h6v7h3a1 1 0 001-1V7l-7-5z"
+                      />
+                    </svg>
+                    1h
+                  </div>
+                </div>
+                <h3 class="font-poppins font-semibold text-lg mb-2">
+                  Llavero Spotify
+                </h3>
+                <p class="text-text-secondary text-sm mb-3">
+                  Lleva tu canción favorita siempre contigo con este llavero
+                  personalizado y diseño moderno distintivo.
+                </p>
+                <div class="flex items-center justify-between mb-4">
+                  <span class="font-poppins font-bold text-xl text-primary">
+                    $2.500
+                  </span>
+                  <div class="flex items-center text-xs text-text-secondary">
+                    <svg
+                      class="w-4 h-4 mr-1 text-accent"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                    En stock
+                  </div>
+                </div>
+                <a
+                  href="dllaverospotify.html"
+                  class="w-full bg-accent text-white px-4 py-2 rounded-lg font-poppins font-medium hover:bg-accent-600 transition-colors duration-200 text-center block"
+                >
+                  Ver Producto
+                </a>
+              </div>
+
+              <!-- Producto 9 - Llavero Valorant -->
+              <div
+                class="product-card card group hover:shadow-xl transition-all duration-300 cursor-pointer"
+                data-category="gaming"
+                data-material="pla"
+                data-price="2.800"
+                data-complexity="basico"
+                onclick="window.location.href='dvalorant.html'"
+              >
+                <div class="relative overflow-hidden rounded-lg mb-4">
+                  <img
+                    src="../public/img/catalogo/llaverovalo/llaverovalo.webp"
+                    alt="Llavero Valorant"
+                    class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                    onerror="this.src='https://images.unsplash.com/photo-1633613286848-e6f43bbafb8d?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                  />
+                  <div
+                    class="absolute top-3 left-3 bg-primary text-white px-2 py-1 rounded-full text-xs font-medium"
+                  >
+                    PLA
+                  </div>
+                  <div
+                    class="absolute bottom-3 right-3 bg-secondary-900 bg-opacity-80 text-white px-2 py-1 rounded-full text-xs flex items-center"
+                  >
+                    <svg
+                      class="w-3 h-3 mr-1"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        d="M10 2L3 7v11a1 1 0 001 1h3v-7h6v7h3a1 1 0 001-1V7l-7-5z"
+                      />
+                    </svg>
+                    1h
+                  </div>
+                </div>
+                <h3 class="font-poppins font-semibold text-lg mb-2">
+                  Llavero Valorant
+                </h3>
+                <p class="text-text-secondary text-sm mb-3">
+                  Muestra tu lealtad a Valorant y presume un accesorio gamer que
+                  destaca en cualquier lugar.
+                </p>
+                <div class="flex items-center justify-between mb-4">
+                  <span class="font-poppins font-bold text-xl text-primary">
+                    $2.800
+                  </span>
+                  <div class="flex items-center text-xs text-text-secondary">
+                    <svg
+                      class="w-4 h-4 mr-1 text-accent"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                    En stock
+                  </div>
+                </div>
+                <a
+                  href="dvalorant.html"
+                  class="w-full bg-accent text-white px-4 py-2 rounded-lg font-poppins font-medium hover:bg-accent-600 transition-colors duration-200 text-center block"
+                >
+                  Ver Producto
+                </a>
+              </div>
+
+              <!-- Producto 10 - Alcancía Pokeball -->
+              <div
+                class="product-card card group hover:shadow-xl transition-all duration-300 cursor-pointer"
+                data-category="coleccionables"
+                data-material="pla"
+                data-price="5.500"
+                data-complexity="intermedio"
+                onclick="window.location.href='dpokeball.html'"
+              >
+                <div class="relative overflow-hidden rounded-lg mb-4">
+                  <img
+                    src="../public/img/catalogo/alcanciapokeball/alcanciapokeball.webp"
+                    alt="Alcancía Pokeball"
+                    class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                    onerror="this.src='https://images.unsplash.com/photo-1542779283-429940ce8336?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                  />
+                  <div
+                    class="absolute top-3 left-3 bg-primary text-white px-2 py-1 rounded-full text-xs font-medium"
+                  >
+                    PLA
+                  </div>
+                  <div
+                    class="absolute bottom-3 right-3 bg-secondary-900 bg-opacity-80 text-white px-2 py-1 rounded-full text-xs flex items-center"
+                  >
+                    <svg
+                      class="w-3 h-3 mr-1"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        d="M10 2L3 7v11a1 1 0 001 1h3v-7h6v7h3a1 1 0 001-1V7l-7-5z"
+                      />
+                    </svg>
+                    4h
+                  </div>
+                </div>
+                <h3 class="font-poppins font-semibold text-lg mb-2">
+                  Alcancía Pokeball
+                </h3>
+                <p class="text-text-secondary text-sm mb-3">
+                  Ahorra con estilo mientras decoras tu habitación con una
+                  Pokeball funcional y visualmente atractiva.
+                </p>
+                <div class="flex items-center justify-between mb-4">
+                  <span class="font-poppins font-bold text-xl text-primary">
+                    $5.500
+                  </span>
+                  <div class="flex items-center text-xs text-text-secondary">
+                    <svg
+                      class="w-4 h-4 mr-1 text-accent"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                    En stock
+                  </div>
+                </div>
+                <a
+                  href="dpokeball.html"
+                  class="w-full bg-accent text-white px-4 py-2 rounded-lg font-poppins font-medium hover:bg-accent-600 transition-colors duration-200 text-center block"
+                >
+                  Ver Producto
+                </a>
+              </div>
+
+              <!-- Producto 11 - Conejo Confort -->
+              <div
+                class="product-card card group hover:shadow-xl transition-all duration-300 cursor-pointer"
+                data-category="hogar"
+                data-material="pla"
+                data-price="3.500"
+                data-complexity="basico"
+                onclick="window.location.href='dconejo.html'"
+              >
+                <div class="relative overflow-hidden rounded-lg mb-4">
+                  <img
+                    src="../public/img/catalogo/conejoconfort/conejoconfort.webp"
+                    alt="Conejo Confort"
+                    class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                    onerror="this.src='https://images.unsplash.com/photo-1606800052052-a08af7148866?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                  />
+                  <div
+                    class="absolute top-3 left-3 bg-primary text-white px-2 py-1 rounded-full text-xs font-medium"
+                  >
+                    PLA
+                  </div>
+                  <div
+                    class="absolute bottom-3 right-3 bg-secondary-900 bg-opacity-80 text-white px-2 py-1 rounded-full text-xs flex items-center"
+                  >
+                    <svg
+                      class="w-3 h-3 mr-1"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        d="M10 2L3 7v11a1 1 0 001 1h3v-7h6v7h3a1 1 0 001-1V7l-7-5z"
+                      />
+                    </svg>
+                    2h
+                  </div>
+                </div>
+                <h3 class="font-poppins font-semibold text-lg mb-2">
+                  Conejo - Confort
+                </h3>
+                <p class="text-text-secondary text-sm mb-3">
+                  Aporta calidez y ternura a tu baño con un este conejito porta
+                  confort de encantador diseño único.
+                </p>
+                <div class="flex items-center justify-between mb-4">
+                  <span class="font-poppins font-bold text-xl text-primary">
+                    $3.500
+                  </span>
+                  <div class="flex items-center text-xs text-text-secondary">
+                    <svg
+                      class="w-4 h-4 mr-1 text-accent"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                    En stock
+                  </div>
+                </div>
+                <a
+                  href="dconejo.html"
+                  class="w-full bg-accent text-white px-4 py-2 rounded-lg font-poppins font-medium hover:bg-accent-600 transition-colors duration-200 text-center block"
+                >
+                  Ver Producto
+                </a>
+              </div>
+
+              <!-- Producto 12 - Llavero PlayStation -->
+              <div
+                class="product-card card group hover:shadow-xl transition-all duration-300 cursor-pointer"
+                data-category="gaming"
+                data-material="pla"
+                data-price="2.800"
+                data-complexity="basico"
+                onclick="window.location.href='dplaystation.html'"
+              >
+                <div class="relative overflow-hidden rounded-lg mb-4">
+                  <img
+                    src="../public/img/catalogo/llaveroplaystation/llaveroplaystation.webp"
+                    alt="Llavero PlayStation"
+                    class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                    onerror="this.src='https://images.unsplash.com/photo-1607853202273-797f1c22a38e?q=80&w=2827&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                  />
+                  <div
+                    class="absolute top-3 left-3 bg-primary text-white px-2 py-1 rounded-full text-xs font-medium"
+                  >
+                    PLA
+                  </div>
+                  <div
+                    class="absolute bottom-3 right-3 bg-secondary-900 bg-opacity-80 text-white px-2 py-1 rounded-full text-xs flex items-center"
+                  >
+                    <svg
+                      class="w-3 h-3 mr-1"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        d="M10 2L3 7v11a1 1 0 001 1h3v-7h6v7h3a1 1 0 001-1V7l-7-5z"
+                      />
+                    </svg>
+                    1h
+                  </div>
+                </div>
+                <h3 class="font-poppins font-semibold text-lg mb-2">
+                  Llavero PlayStation
+                </h3>
+                <p class="text-text-secondary text-sm mb-3">
+                  Lleva contigo el icónico símbolo PlayStation y demuestra tu
+                  pasión gamer con este accesorio premium.
+                </p>
+                <div class="flex items-center justify-between mb-4">
+                  <span class="font-poppins font-bold text-xl text-primary"
+                    >$2.800</span
+                  >
+                  <div class="flex items-center text-xs text-text-secondary">
+                    <svg
+                      class="w-4 h-4 mr-1 text-accent"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                    En stock
+                  </div>
+                </div>
+                <a
+                  href="dplaystation.html"
+                  class="w-full bg-accent text-white px-4 py-2 rounded-lg font-poppins font-medium hover:bg-accent-600 transition-colors duration-200 text-center block"
+                >
+                  Ver Producto
+                </a>
+              </div>
+
+              <!-- Producto 13 - Llavero Red Dead Redemption 2 -->
+              <div
+                class="product-card card group hover:shadow-xl transition-all duration-300 cursor-pointer"
+                data-category="gaming"
+                data-material="pla"
+                data-price="3.200"
+                data-complexity="intermedio"
+                onclick="window.location.href='dreddead.html'"
+              >
+                <div class="relative overflow-hidden rounded-lg mb-4">
+                  <img
+                    src="../public/img/catalogo/llaveroreddead/llaveroreddead.webp"
+                    alt="Llavero Red Dead Redemption 2"
+                    class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                    onerror="this.src='https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                  />
+                  <div
+                    class="absolute top-3 left-3 bg-primary text-white px-2 py-1 rounded-full text-xs font-medium"
+                  >
+                    PLA
+                  </div>
+                  <div
+                    class="absolute bottom-3 right-3 bg-secondary-900 bg-opacity-80 text-white px-2 py-1 rounded-full text-xs flex items-center"
+                  >
+                    <svg
+                      class="w-3 h-3 mr-1"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        d="M10 2L3 7v11a1 1 0 001 1h3v-7h6v7h3a1 1 0 001-1V7l-7-5z"
+                      />
+                    </svg>
+                    2h
+                  </div>
+                </div>
+                <h3 class="font-poppins font-semibold text-lg mb-2">
+                  Llavero Red Dead Redemption 2
+                </h3>
+                <p class="text-text-secondary text-sm mb-3">
+                  Exhibe tu amor por Red Dead Redemption 2 con un accesorio
+                  resistente y diseño único memorable.
+                </p>
+                <div class="flex items-center justify-between mb-4">
+                  <span class="font-poppins font-bold text-xl text-primary">
+                    $3.200
+                  </span>
+                  <div class="flex items-center text-xs text-text-secondary">
+                    <svg
+                      class="w-4 h-4 mr-1 text-red-500"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                    No disponible
+                  </div>
+                </div>
+                <a
+                  href="dreddead.html"
+                  class="w-full bg-accent text-white px-4 py-2 rounded-lg font-poppins font-medium hover:bg-accent-600 transition-colors duration-200 text-center block"
+                >
+                  Ver Producto
+                </a>
+              </div>
+
+              <!-- Producto 14 - Soporte juegos PS4 -->
+              <div
+                class="product-card card group hover:shadow-xl transition-all duration-300 cursor-pointer"
+                data-category="gaming"
+                data-material="pla"
+                data-price="4.500"
+                data-complexity="intermedio"
+                onclick="window.location.href='dsoporteps4.html'"
+              >
+                <div class="relative overflow-hidden rounded-lg mb-4">
+                  <img
+                    src="../public/img/catalogo/soporteparajuegosps4/soporteparajuegosps4.webp"
+                    alt="Soporte juegos PS4"
+                    class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                    onerror="this.src='https://images.unsplash.com/photo-1607853202273-797f1c22a38e?q=80&w=2827&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                  />
+                  <div
+                    class="absolute top-3 left-3 bg-primary text-white px-2 py-1 rounded-full text-xs font-medium"
+                  >
+                    PLA
+                  </div>
+                  <div
+                    class="absolute bottom-3 right-3 bg-secondary-900 bg-opacity-80 text-white px-2 py-1 rounded-full text-xs flex items-center"
+                  >
+                    <svg
+                      class="w-3 h-3 mr-1"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        d="M10 2L3 7v11a1 1 0 001 1h3v-7h6v7h3a1 1 0 001-1V7l-7-5z"
+                      />
+                    </svg>
+                    3h
+                  </div>
+                </div>
+                <h3 class="font-poppins font-semibold text-lg mb-2">
+                  Soporte Juegos PS4
+                </h3>
+                <p class="text-text-secondary text-sm mb-3">
+                  Mantén tus juegos de PlayStation 4 organizados y a mano con un
+                  soporte duradero y estilizado, ideal para múltiples juegos.
+                </p>
+                <div class="flex items-center justify-between mb-4">
+                  <span class="font-poppins font-bold text-xl text-primary"
+                    >$4.500</span
+                  >
+                  <div class="flex items-center text-xs text-text-secondary">
+                    <svg
+                      class="w-4 h-4 mr-1 text-accent"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                    En stock
+                  </div>
+                </div>
+                <a
+                  href="dsoporteps4.html"
+                  class="w-full bg-accent text-white px-4 py-2 rounded-lg font-poppins font-medium hover:bg-accent-600 transition-colors duration-200 text-center block"
+                  >Ver Producto</a
+                >
+              </div>
+
+              <!-- Producto 15 - Posavasos Colo-Colo -->
+              <div
+                class="product-card card group hover:shadow-xl transition-all duration-300 cursor-pointer"
+                data-category="deportes"
+                data-material="pla"
+                data-price="3.800"
+                data-complexity="basico"
+                onclick="window.location.href='dcolocolo.html'"
+              >
+                <div class="relative overflow-hidden rounded-lg mb-4">
+                  <img
+                    src="../public/img/catalogo/portavasoscolocolo/portavasoscolocolo.webp"
+                    alt="Posavasos Colo-Colo"
+                    class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                    onerror="this.src='https://images.unsplash.com/photo-1574629810360-7efbbe195018?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                  />
+                  <div
+                    class="absolute top-3 left-3 bg-primary text-white px-2 py-1 rounded-full text-xs font-medium"
+                  >
+                    PLA
+                  </div>
+                  <div
+                    class="absolute bottom-3 right-3 bg-secondary-900 bg-opacity-80 text-white px-2 py-1 rounded-full text-xs flex items-center"
+                  >
+                    <svg
+                      class="w-3 h-3 mr-1"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        d="M10 2L3 7v11a1 1 0 001 1h3v-7h6v7h3a1 1 0 001-1V7l-7-5z"
+                      />
+                    </svg>
+                    2h
+                  </div>
+                </div>
+                <h3 class="font-poppins font-semibold text-lg mb-2">
+                  Posavasos Colo-Colo
+                </h3>
+                <p class="text-text-secondary text-sm mb-3">
+                  Protege tus superficies mientras muestras tu orgullo albo con
+                  estos posavasos de Colo-Colo "Grande Colo-Colooo".
+                </p>
+                <div class="flex items-center justify-between mb-4">
+                  <span class="font-poppins font-bold text-xl text-primary">
+                    $3.800
+                  </span>
+                  <div class="flex items-center text-xs text-text-secondary">
+                    <svg
+                      class="w-4 h-4 mr-1 text-accent"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                    En stock
+                  </div>
+                </div>
+                <a
+                  href="dcolocolo.html"
+                  class="w-full bg-accent text-white px-4 py-2 rounded-lg font-poppins font-medium hover:bg-accent-600 transition-colors duration-200 text-center block"
+                >
+                  Ver Producto
+                </a>
+              </div>
+
+              <!-- Producto 16 - Soporte mando y auriculares PS4/PS5 -->
+              <div
+                class="product-card card group hover:shadow-xl transition-all duration-300 cursor-pointer"
+                data-category="gaming"
+                data-material="pla"
+                data-price="6.800"
+                data-complexity="avanzado"
+                onclick="window.location.href='dsoportemandoauricular.html'"
+              >
+                <div class="relative overflow-hidden rounded-lg mb-4">
+                  <img
+                    src="../public/img/catalogo/soportedoblemandops4yps5+audiofonos/soportedoblemandops4yps5+audiofonos.webp"
+                    alt="Soporte mando y auriculares PS4/PS5"
+                    class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                    onerror="this.src='https://images.unsplash.com/photo-1607853202273-797f1c22a38e?q=80&w=2827&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                  />
+                  <div
+                    class="absolute top-3 left-3 bg-primary text-white px-2 py-1 rounded-full text-xs font-medium"
+                  >
+                    PLA
+                  </div>
+                  <div
+                    class="absolute bottom-3 right-3 bg-secondary-900 bg-opacity-80 text-white px-2 py-1 rounded-full text-xs flex items-center"
+                  >
+                    <svg
+                      class="w-3 h-3 mr-1"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        d="M10 2L3 7v11a1 1 0 001 1h3v-7h6v7h3a1 1 0 001-1V7l-7-5z"
+                      />
+                    </svg>
+                    4h
+                  </div>
+                </div>
+                <h3 class="font-poppins font-semibold text-lg mb-2">
+                  Soporte Mando + Auriculares PS4/PS5
+                </h3>
+                <p class="text-text-secondary text-sm mb-3">
+                  Estéticamente atractivo para tu espacio.
+                </p>
+                <div class="flex items-center justify-between mb-4">
+                  <span class="font-poppins font-bold text-xl text-primary">
+                    $6.800
+                  </span>
+                  <div class="flex items-center text-xs text-text-secondary">
+                    <svg
+                      class="w-4 h-4 mr-1 text-accent"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                    En stock
+                  </div>
+                </div>
+                <a
+                  href="dsoportemandoauricular.html"
+                  class="w-full bg-accent text-white px-4 py-2 rounded-lg font-poppins font-medium hover:bg-accent-600 transition-colors duration-200 text-center block"
+                >
+                  Ver Producto
+                </a>
+              </div>
+
+              <!-- Producto 17 - Soporte mural Xbox/PS5 -->
+              <div
+                class="product-card card group hover:shadow-xl transition-all duration-300 cursor-pointer"
+                data-category="gaming"
+                data-material="pla"
+                data-price="7.500"
+                data-complexity="avanzado"
+                onclick="window.location.href='dsoportemural.html'"
+              >
+                <div class="relative overflow-hidden rounded-lg mb-4">
+                  <img
+                    src="../public/img/catalogo/soportemurallaps5yxbox/soportemurallaps5yxbox.webp"
+                    alt="Soporte mural Xbox/PS5"
+                    class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                    onerror="this.src='https://images.unsplash.com/photo-1607853202273-797f1c22a38e?q=80&w=2827&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                  />
+                  <div
+                    class="absolute top-3 left-3 bg-primary text-white px-2 py-1 rounded-full text-xs font-medium"
+                  >
+                    PLA
+                  </div>
+                  <div
+                    class="absolute bottom-3 right-3 bg-secondary-900 bg-opacity-80 text-white px-2 py-1 rounded-full text-xs flex items-center"
+                  >
+                    <svg
+                      class="w-3 h-3 mr-1"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        d="M10 2L3 7v11a1 1 0 001 1h3v-7h6v7h3a1 1 0 001-1V7l-7-5z"
+                      />
+                    </svg>
+                    5h
+                  </div>
+                </div>
+                <h3 class="font-poppins font-semibold text-lg mb-2">
+                  Soporte Mural Xbox/PS5
+                </h3>
+                <p class="text-text-secondary text-sm mb-3">
+                  Libera espacio y decora tu pared con un soporte diseñado para
+                  exhibir mandos con estilo.
+                </p>
+                <div class="flex items-center justify-between mb-4">
+                  <span class="font-poppins font-bold text-xl text-primary">
+                    $7.500
+                  </span>
+                  <div class="flex items-center text-xs text-text-secondary">
+                    <svg
+                      class="w-4 h-4 mr-1 text-accent"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                    En stock
+                  </div>
+                </div>
+                <a
+                  href="dsoportemural.html"
+                  class="w-full bg-accent text-white px-4 py-2 rounded-lg font-poppins font-medium hover:bg-accent-600 transition-colors duration-200 text-center block"
+                >
+                  Ver Producto
+                </a>
+              </div>
+
+              <!-- Producto 18 - Organizador de Té -->
+              <div
+                class="product-card card group hover:shadow-xl transition-all duration-300 cursor-pointer"
+                data-category="hogar"
+                data-material="pla"
+                data-price="4.200"
+                data-complexity="intermedio"
+                onclick="window.location.href='dorganizador.html'"
+              >
+                <div class="relative overflow-hidden rounded-lg mb-4">
+                  <img
+                    src="../public/img/catalogo/dispensadordetes/dispensadordetes.webp"
+                    alt="Organizador de Té"
+                    class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                    onerror="this.src='https://images.unsplash.com/photo-1606800052052-a08af7148866?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                  />
+                  <div
+                    class="absolute top-3 left-3 bg-primary text-white px-2 py-1 rounded-full text-xs font-medium"
+                  >
+                    PLA
+                  </div>
+                  <div
+                    class="absolute bottom-3 right-3 bg-secondary-900 bg-opacity-80 text-white px-2 py-1 rounded-full text-xs flex items-center"
+                  >
+                    <svg
+                      class="w-3 h-3 mr-1"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        d="M10 2L3 7v11a1 1 0 001 1h3v-7h6v7h3a1 1 0 001-1V7l-7-5z"
+                      />
+                    </svg>
+                    3h
+                  </div>
+                </div>
+                <h3 class="font-poppins font-semibold text-lg mb-2">
+                  Organizador de Té
+                </h3>
+                <p class="text-text-secondary text-sm mb-3">
+                  Guarda tus bolsitas de té de forma ordenada y decorativa,
+                  optimizando espacio y estilo en tu cocina.
+                </p>
+                <div class="flex items-center justify-between mb-4">
+                  <span class="font-poppins font-bold text-xl text-primary">
+                    $4.200
+                  </span>
+                  <div class="flex items-center text-xs text-text-secondary">
+                    <svg
+                      class="w-4 h-4 mr-1 text-accent"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                    En stock
+                  </div>
+                </div>
+                <a
+                  href="dorganizador.html"
+                  class="w-full bg-accent text-white px-4 py-2 rounded-lg font-poppins font-medium hover:bg-accent-600 transition-colors duration-200 text-center block"
+                >
+                  Ver Producto
+                </a>
+              </div>
+
+              <!-- Producto 19 - Dispensador palillos -->
+              <div
+                class="product-card card group hover:shadow-xl transition-all duration-300 cursor-pointer"
+                data-category="hogar"
+                data-material="pla"
+                data-price="2.800"
+                data-complexity="basico"
+                onclick="window.location.href='dpalillos.html'"
+              >
+                <div class="relative overflow-hidden rounded-lg mb-4">
+                  <img
+                    src="../public/img/catalogo/dispensadordepalillos/dispensadordepalillos.webp"
+                    alt="Dispensador palillos"
+                    class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                    onerror="this.src='https://images.unsplash.com/photo-1606800052052-a08af7148866?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                  />
+                  <div
+                    class="absolute top-3 left-3 bg-primary text-white px-2 py-1 rounded-full text-xs font-medium"
+                  >
+                    PLA
+                  </div>
+                  <div
+                    class="absolute bottom-3 right-3 bg-secondary-900 bg-opacity-80 text-white px-2 py-1 rounded-full text-xs flex items-center"
+                  >
+                    <svg
+                      class="w-3 h-3 mr-1"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        d="M10 2L3 7v11a1 1 0 001 1h3v-7h6v7h3a1 1 0 001-1V7l-7-5z"
+                      />
+                    </svg>
+                    1h
+                  </div>
+                </div>
+                <h3 class="font-poppins font-semibold text-lg mb-2">
+                  Dispensador de Palillos
+                </h3>
+                <p class="text-text-secondary text-sm mb-3">
+                  Mantén tus palillos accesibles y protegidos con un dispensador
+                  funcional y diseño atractivo moderno.
+                </p>
+                <div class="flex items-center justify-between mb-4">
+                  <span class="font-poppins font-bold text-xl text-primary">
+                    $2.800
+                  </span>
+                  <div class="flex items-center text-xs text-text-secondary">
+                    <svg
+                      class="w-4 h-4 mr-1 text-accent"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                    En stock
+                  </div>
+                </div>
+                <a
+                  href="dpalillos.html"
+                  class="w-full bg-accent text-white px-4 py-2 rounded-lg font-poppins font-medium hover:bg-accent-600 transition-colors duration-200 text-center block"
+                >
+                  Ver Producto
+                </a>
+              </div>
+
+              <!-- Producto 21 - Soporte USB-A -->
+              <div
+                class="product-card card group hover:shadow-xl transition-all duration-300 cursor-pointer"
+                data-category="hogar"
+                data-material="pla"
+                data-price="2.500"
+                data-complexity="basico"
+                onclick="window.location.href='dsoporteusb.html'"
+                <div
+                class="product-card card group hover:shadow-xl transition-all duration-300 cursor-pointer"
+                data-category="hogar"
+                data-material="pla"
+                data-price="2.500"
+                data-complexity="basico"
+                onclick="window.location.href='dsoporteusb.html'"
+              >
+                <div class="relative overflow-hidden rounded-lg mb-4">
+                  <img
+                    src="../public/img/catalogo/estantependrive/estantependrive.jfif"
+                    alt="Soporte USB-A"
+                    class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                    onerror="this.src='https://images.unsplash.com/photo-1606800052052-a08af7148866?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                  />
+                  <div
+                    class="absolute top-3 left-3 bg-primary text-white px-2 py-1 rounded-full text-xs font-medium"
+                  >
+                    PLA
+                  </div>
+                  <div
+                    class="absolute bottom-3 right-3 bg-secondary-900 bg-opacity-80 text-white px-2 py-1 rounded-full text-xs flex items-center"
+                  >
+                    <svg
+                      class="w-3 h-3 mr-1"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        d="M10 2L3 7v11a1 1 0 001 1h3v-7h6v7h3a1 1 0 001-1V7l-7-5z"
+                      />
+                    </svg>
+                    1h
+                  </div>
+                </div>
+                <h3 class="font-poppins font-semibold text-lg mb-2">
+                  Soporte USB-A
+                </h3>
+                <p class="text-text-secondary text-sm mb-3">
+                  Mantén tus adaptadores y conectores USB-A siempre accesibles y
+                  ordenados con un soporte práctico resistente.
+                </p>
+                <div class="flex items-center justify-between mb-4">
+                  <span class="font-poppins font-bold text-xl text-primary">
+                    $2.500
+                  </span>
+                  <div class="flex items-center text-xs text-text-secondary">
+                    <svg
+                      class="w-4 h-4 mr-1 text-accent"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                    En stock
+                  </div>
+                </div>
+                <a
+                  href="dsoporteusb.html"
+                  class="w-full bg-accent text-white px-4 py-2 rounded-lg font-poppins font-medium hover:bg-accent-600 transition-colors duration-200 text-center block"
+                >
+                  Ver Producto
+                </a>
+              </div>
+
+              <!-- Producto 22 - Soporte doble PS5 -->
+              <div
+                class="product-card card group hover:shadow-xl transition-all duration-300 cursor-pointer"
+                data-category="gaming"
+                data-material="pla"
+                data-price="6.500"
+                data-complexity="intermedio"
+                onclick="window.location.href='dsoportedobleps5.html'"
+              >
+                <div class="relative overflow-hidden rounded-lg mb-4">
+                  <img
+                    src="../public/img/catalogo/soportedoblemandops5/soportedoblemandops5.webp"
+                    alt="Soporte doble PS5"
+                    class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                    onerror="this.src='https://images.unsplash.com/photo-1607853202273-797f1c22a38e?q=80&w=2827&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                  />
+                  <div
+                    class="absolute top-3 left-3 bg-primary text-white px-2 py-1 rounded-full text-xs font-medium"
+                  >
+                    PLA
+                  </div>
+                  <div
+                    class="absolute bottom-3 right-3 bg-secondary-900 bg-opacity-80 text-white px-2 py-1 rounded-full text-xs flex items-center"
+                  >
+                    <svg
+                      class="w-3 h-3 mr-1"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        d="M10 2L3 7v11a1 1 0 001 1h3v-7h6v7h3a1 1 0 001-1V7l-7-5z"
+                      />
+                    </svg>
+                    3h
+                  </div>
+                </div>
+                <h3 class="font-poppins font-semibold text-lg mb-2">
+                  Soporte Doble PS5
+                </h3>
+                <p class="text-text-secondary text-sm mb-3">
+                  Organiza y exhibe tus mandos PS5 con un soporte estable que
+                  optimiza espacio y estilo.
+                </p>
+                <div class="flex items-center justify-between mb-4">
+                  <span class="font-poppins font-bold text-xl text-primary">
+                    $6.500
+                  </span>
+                  <div class="flex items-center text-xs text-text-secondary">
+                    <svg
+                      class="w-4 h-4 mr-1 text-accent"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                    En stock
+                  </div>
+                </div>
+                <a
+                  href="dsoportedobleps5.html"
+                  class="w-full bg-accent text-white px-4 py-2 rounded-lg font-poppins font-medium hover:bg-accent-600 transition-colors duration-200 text-center block"
+                >
+                  Ver Producto
+                </a>
+              </div>
+
+              <!-- Producto 23 - Colgante para perro -->
+              <div
+                class="product-card card group hover:shadow-xl transition-all duration-300 cursor-pointer"
+                data-category="mascotas"
+                data-material="pla"
+                data-price="3.200"
+                data-complexity="intermedio"
+                onclick="window.location.href='dcolganteperro.html'"
+              >
+                <div class="relative overflow-hidden rounded-lg mb-4">
+                  <img
+                    src="../public/img/catalogo/plaquitaparamascotas/plaquitaparamascotas.webp"
+                    alt="Colgante para perro"
+                    class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                    onerror="this.src='https://images.unsplash.com/photo-1586671267731-da2cf3ceeb80?q=80&w=2878&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                  />
+                  <div
+                    class="absolute top-3 left-3 bg-primary text-white px-2 py-1 rounded-full text-xs font-medium"
+                  >
+                    PLA
+                  </div>
+                  <div
+                    class="absolute bottom-3 right-3 bg-secondary-900 bg-opacity-80 text-white px-2 py-1 rounded-full text-xs flex items-center"
+                  >
+                    <svg
+                      class="w-3 h-3 mr-1"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        d="M10 2L3 7v11a1 1 0 001 1h3v-7h6v7h3a1 1 0 001-1V7l-7-5z"
+                      />
+                    </svg>
+                    2h
+                  </div>
+                </div>
+                <h3 class="font-poppins font-semibold text-lg mb-2">
+                  Colgante para Perro
+                </h3>
+                <p class="text-text-secondary text-sm mb-3">
+                  Asegura la identificación de tu mascota con un colgante
+                  resistente y un diseño atractivo personalizado.
+                </p>
+                <div class="flex items-center justify-between mb-4">
+                  <span class="font-poppins font-bold text-xl text-primary">
+                    $3.200
+                  </span>
+                  <div class="flex items-center text-xs text-text-secondary">
+                    <svg
+                      class="w-4 h-4 mr-1 text-accent"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                    En stock
+                  </div>
+                </div>
+                <a
+                  href="dcolganteperro.html"
+                  class="w-full bg-accent text-white px-4 py-2 rounded-lg font-poppins font-medium hover:bg-accent-600 transition-colors duration-200 text-center block"
+                >
+                  Ver Producto
+                </a>
+              </div>
+
+              <!-- Producto 25 - Base vela BOMB-OMB -->
+              <div
+                class="product-card card group hover:shadow-xl transition-all duration-300 cursor-pointer"
+                data-category="gaming"
+                data-material="pla"
+                data-price="4.800"
+                data-complexity="intermedio"
+                onclick="window.location.href='dbombomb.html'"
+              >
+                <div class="relative overflow-hidden rounded-lg mb-4">
+                  <img
+                    src="../public/img/catalogo/bombomb/bombomb.webp"
+                    alt="Base vela BOMB-OMB"
+                    class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                    onerror="this.src='https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                  />
+                  <div
+                    class="absolute top-3 left-3 bg-primary text-white px-2 py-1 rounded-full text-xs font-medium"
+                  >
+                    PLA
+                  </div>
+                  <div
+                    class="absolute bottom-3 right-3 bg-secondary-900 bg-opacity-80 text-white px-2 py-1 rounded-full text-xs flex items-center"
+                  >
+                    <svg
+                      class="w-3 h-3 mr-1"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        d="M10 2L3 7v11a1 1 0 001 1h3v-7h6v7h3a1 1 0 001-1V7l-7-5z"
+                      />
+                    </svg>
+                    3h
+                  </div>
+                </div>
+                <h3 class="font-poppins font-semibold text-lg mb-2">
+                  Base Vela BOMB-OMB
+                </h3>
+                <p class="text-text-secondary text-sm mb-3">
+                  Decora con humor y estilo gamer utilizando esta base de vela
+                  con temática BOMB-OMB creativa.
+                </p>
+                <div class="flex items-center justify-between mb-4">
+                  <span class="font-poppins font-bold text-xl text-primary">
+                    $4.800
+                  </span>
+                  <div class="flex items-center text-xs text-text-secondary">
+                    <svg
+                      class="w-4 h-4 mr-1 text-accent"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                    En stock
+                  </div>
+                </div>
+                <a
+                  href="dbombomb.html"
+                  class="w-full bg-accent text-white px-4 py-2 rounded-lg font-poppins font-medium hover:bg-accent-600 transition-colors duration-200 text-center block"
+                >
+                  Ver Producto
+                </a>
+              </div>
+
+              <!-- Producto 26 - Organizador de Cables -->
+              <div
+                class="product-card card group hover:shadow-xl transition-all duration-300 cursor-pointer"
+                data-category="hogar"
+                data-material="pla"
+                data-price="3.800"
+                data-complexity="intermedio"
+                onclick="window.location.href='dorganizadorcables.html'"
+              >
+                <div class="relative overflow-hidden rounded-lg mb-4">
+                  <img
+                    src="../public/img/catalogo/organizadordecables/organizadordecables.webp"
+                    alt="Organizador de Cables"
+                    class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                    onerror="this.src='https://images.unsplash.com/photo-1606800052052-a08af7148866?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                  />
+                  <div
+                    class="absolute top-3 left-3 bg-primary text-white px-2 py-1 rounded-full text-xs font-medium"
+                  >
+                    PLA
+                  </div>
+                  <div
+                    class="absolute bottom-3 right-3 bg-secondary-900 bg-opacity-80 text-white px-2 py-1 rounded-full text-xs flex items-center"
+                  >
+                    <svg
+                      class="w-3 h-3 mr-1"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        d="M10 2L3 7v11a1 1 0 001 1h3v-7h6v7h3a1 1 0 001-1V7l-7-5z"
+                      />
+                    </svg>
+                    2h
+                  </div>
+                </div>
+                <h3 class="font-poppins font-semibold text-lg mb-2">
+                  Organizador de Cables
+                </h3>
+                <p class="text-text-secondary text-sm mb-3">
+                  Mantén tus cables ordenados y con estilo gracias a este
+                  organizador con diseño tipo ladrillo.
+                </p>
+                <div class="flex items-center justify-between mb-4">
+                  <span class="font-poppins font-bold text-xl text-primary"
+                    >$3.800</span
+                  >
+                  <div class="flex items-center text-xs text-text-secondary">
+                    <svg
+                      class="w-4 h-4 mr-1 text-accent"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                    En stock
+                  </div>
+                </div>
+                <a
+                  href="dorganizadorcables.html"
+                  class="w-full bg-accent text-white px-4 py-2 rounded-lg font-poppins font-medium hover:bg-accent-600 transition-colors duration-200 text-center block"
+                  >Ver Producto</a
+                >
+              </div>
+
+              <!-- Producto 27 - Soporte PS4 Spiderman -->
+              <div
+                class="product-card card group hover:shadow-xl transition-all duration-300 cursor-pointer"
+                data-category="gaming"
+                data-material="pla"
+                data-price="5.500"
+                data-complexity="intermedio"
+                onclick="window.location.href='dspidermanps4.html'"
+              >
+                <div class="relative overflow-hidden rounded-lg mb-4">
+                  <img
+                    src="../public/img/catalogo/soportemandops4spiderman/soportemandops4spiderman.webp"
+                    alt="Soporte PS4 Spiderman"
+                    class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                    onerror="this.src='https://images.unsplash.com/photo-1633613286848-e6f43bbafb8d?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                  />
+                  <div
+                    class="absolute top-3 left-3 bg-primary text-white px-2 py-1 rounded-full text-xs font-medium"
+                  >
+                    PLA
+                  </div>
+                  <div
+                    class="absolute bottom-3 right-3 bg-secondary-900 bg-opacity-80 text-white px-2 py-1 rounded-full text-xs flex items-center"
+                  >
+                    <svg
+                      class="w-3 h-3 mr-1"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        d="M10 2L3 7v11a1 1 0 001 1h3v-7h6v7h3a1 1 0 001-1V7l-7-5z"
+                      />
+                    </svg>
+                    3h
+                  </div>
+                </div>
+                <h3 class="font-poppins font-semibold text-lg mb-2">
+                  Soporte PS4 Spiderman
+                </h3>
+                <p class="text-text-secondary text-sm mb-3">
+                  Añade un toque arácnido a tu setup manteniendo tu mando PS4
+                  seguro y visible.
+                </p>
+                <div class="flex items-center justify-between mb-4">
+                  <span class="font-poppins font-bold text-xl text-primary">
+                    $5.500
+                  </span>
+                  <div class="flex items-center text-xs text-text-secondary">
+                    <svg
+                      class="w-4 h-4 mr-1 text-accent"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                    En stock
+                  </div>
+                </div>
+                <a
+                  href="dspidermanps4.html"
+                  class="w-full bg-accent text-white px-4 py-2 rounded-lg font-poppins font-medium hover:bg-accent-600 transition-colors duration-200 text-center block"
+                >
+                  Ver Producto
+                </a>
+              </div>
+
+              <!-- Producto 28 - Soporte mural PS5 -->
+              <div
+                class="product-card card group hover:shadow-xl transition-all duration-300 cursor-pointer"
+                data-category="gaming"
+                data-material="pla"
+                data-price="4.500"
+                data-complexity="basico"
+                onclick="window.location.href='dsoportemuralps5.html'"
+              >
+                <div class="relative overflow-hidden rounded-lg mb-4">
+                  <img
+                    src="../public/img/catalogo/soportebasicomurallaps5/soportebasicomurallaps5.webp"
+                    alt="Soporte mural PS5"
+                    class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                    onerror="this.src='https://images.unsplash.com/photo-1607853202273-797f1c22a38e?q=80&w=2827&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                  />
+                  <div
+                    class="absolute top-3 left-3 bg-primary text-white px-2 py-1 rounded-full text-xs font-medium"
+                  >
+                    PLA
+                  </div>
+                  <div
+                    class="absolute bottom-3 right-3 bg-secondary-900 bg-opacity-80 text-white px-2 py-1 rounded-full text-xs flex items-center"
+                  >
+                    <svg
+                      class="w-3 h-3 mr-1"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        d="M10 2L3 7v11a1 1 0 001 1h3v-7h6v7h3a1 1 0 001-1V7l-7-5z"
+                      />
+                    </svg>
+                    2h
+                  </div>
+                </div>
+                <h3 class="font-poppins font-semibold text-lg mb-2">
+                  Soporte Mural PS5
+                </h3>
+                <p class="text-text-secondary text-sm mb-3">
+                  Ahorra espacio y mantiene seguro tu mando PS5 con este soporte
+                  mural funcional y elegante.
+                </p>
+                <div class="flex items-center justify-between mb-4">
+                  <span class="font-poppins font-bold text-xl text-primary"
+                    >$4.500</span
+                  >
+                  <div class="flex items-center text-xs text-text-secondary">
+                    <svg
+                      class="w-4 h-4 mr-1 text-accent"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                    En stock
+                  </div>
+                </div>
+                <a
+                  href="dsoportemuralps5.html"
+                  class="w-full bg-accent text-white px-4 py-2 rounded-lg font-poppins font-medium hover:bg-accent-600 transition-colors duration-200 text-center block"
+                  >Ver Producto</a
+                >
+              </div>
+
+              <!-- Producto 29 - Soporte teléfono líneas -->
+              <div
+                class="product-card card group hover:shadow-xl transition-all duration-300 cursor-pointer"
+                data-category="soportetelefono"
+                data-material="pla"
+                data-price="3.200"
+                data-complexity="basico"
+                onclick="window.location.href='dsoportelineas.html'"
+              >
+                <div class="relative overflow-hidden rounded-lg mb-4">
+                  <img
+                    src="../public/img/catalogo/soportetelefonolineas/soportetelefonolineas.webp"
+                    alt="Soporte teléfono líneas"
+                    class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                    onerror="this.src='https://images.unsplash.com/photo-1606800052052-a08af7148866?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                  />
+                  <div
+                    class="absolute top-3 left-3 bg-primary text-white px-2 py-1 rounded-full text-xs font-medium"
+                  >
+                    PLA
+                  </div>
+                  <div
+                    class="absolute bottom-3 right-3 bg-secondary-900 bg-opacity-80 text-white px-2 py-1 rounded-full text-xs flex items-center"
+                  >
+                    <svg
+                      class="w-3 h-3 mr-1"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        d="M10 2L3 7v11a1 1 0 001 1h3v-7h6v7h3a1 1 0 001-1V7l-7-5z"
+                      />
+                    </svg>
+                    1h
+                  </div>
+                </div>
+                <h3 class="font-poppins font-semibold text-lg mb-2">
+                  Soporte Teléfono Líneas
+                </h3>
+                <p class="text-text-secondary text-sm mb-3">
+                  Sostén tu teléfono con un diseño moderno y funcional que
+                  complementa cualquier estilo de escritorio.
+                </p>
+                <div class="flex items-center justify-between mb-4">
+                  <span class="font-poppins font-bold text-xl text-primary"
+                    >$3.200</span
+                  >
+                  <div class="flex items-center text-xs text-text-secondary">
+                    <svg
+                      class="w-4 h-4 mr-1 text-accent"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                    En stock
+                  </div>
+                </div>
+                <a
+                  href="dsoportelineas.html"
+                  class="w-full bg-accent text-white px-4 py-2 rounded-lg font-poppins font-medium hover:bg-accent-600 transition-colors duration-200 text-center block"
+                  >Ver Producto</a
+                >
+              </div>
+
+              <!-- Producto 30 - Logotipo Rust -->
+              <div
+                class="product-card card group hover:shadow-xl transition-all duration-300 cursor-pointer"
+                data-category="gaming"
+                data-material="pla"
+                data-price="4.500"
+                data-complexity="intermedio"
+                onclick="window.location.href='drustlogo.html'"
+                <div
+                class="product-card card group hover:shadow-xl transition-all duration-300 cursor-pointer"
+                data-category="gaming"
+                data-material="pla"
+                data-price="4.500"
+                data-complexity="intermedio"
+                onclick="window.location.href='drustlogo.html'"
+              >
+                <div class="relative overflow-hidden rounded-lg mb-4">
+                  <img
+                    src="../public/img/catalogo/lg-rust/lg-rust.webp"
+                    alt="Logotipo Rust"
+                    class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                    onerror="this.src='https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                  />
+                  <div
+                    class="absolute top-3 left-3 bg-primary text-white px-2 py-1 rounded-full text-xs font-medium"
+                  >
+                    PLA
+                  </div>
+                  <div
+                    class="absolute bottom-3 right-3 bg-secondary-900 bg-opacity-80 text-white px-2 py-1 rounded-full text-xs flex items-center"
+                  >
+                    <svg
+                      class="w-3 h-3 mr-1"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        d="M10 2L3 7v11a1 1 0 001 1h3v-7h6v7h3a1 1 0 001-1V7l-7-5z"
+                      />
+                    </svg>
+                    2h
+                  </div>
+                </div>
+                <h3 class="font-poppins font-semibold text-lg mb-2">
+                  Logotipo Rust
+                </h3>
+                <p class="text-text-secondary text-sm mb-3">
+                  Exhibe tu pasión por Rust con un logotipo decorativo perfecto
+                  para tu espacio gamer.
+                </p>
+                <div class="flex items-center justify-between mb-4">
+                  <span class="font-poppins font-bold text-xl text-primary"
+                    >$4.500</span
+                  >
+                  <div class="flex items-center text-xs text-text-secondary">
+                    <svg
+                      class="w-4 h-4 mr-1 text-accent"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                    En stock
+                  </div>
+                </div>
+                <a
+                  href="drustlogo.html"
+                  class="w-full bg-accent text-white px-4 py-2 rounded-lg font-poppins font-medium hover:bg-accent-600 transition-colors duration-200 text-center block"
+                  >Ver Producto</a
+                >
+              </div>
+
+              <!-- Producto 31 - Porta teléfono gato -->
+              <div
+                class="product-card card group hover:shadow-xl transition-all duration-300 cursor-pointer"
+                data-category="soportetelefono"
+                data-material="pla"
+                data-price="3.500"
+                data-complexity="intermedio"
+                onclick="window.location.href='dgatotel.html'"
+              >
+                <div class="relative overflow-hidden rounded-lg mb-4">
+                  <img
+                    src="../public/img/catalogo/soportetelefonodegato/soportetelefonodegato.webp"
+                    alt="Porta teléfono gato"
+                    class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                    onerror="this.src='https://images.unsplash.com/photo-1606800052052-a08af7148866?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                  />
+                  <div
+                    class="absolute top-3 left-3 bg-primary text-white px-2 py-1 rounded-full text-xs font-medium"
+                  >
+                    PLA
+                  </div>
+                  <div
+                    class="absolute bottom-3 right-3 bg-secondary-900 bg-opacity-80 text-white px-2 py-1 rounded-full text-xs flex items-center"
+                  >
+                    <svg
+                      class="w-3 h-3 mr-1"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        d="M10 2L3 7v11a1 1 0 001 1h3v-7h6v7h3a1 1 0 001-1V7l-7-5z"
+                      />
+                    </svg>
+                    2h
+                  </div>
+                </div>
+                <h3 class="font-poppins font-semibold text-lg mb-2">
+                  Porta Teléfono Gato
+                </h3>
+                <p class="text-text-secondary text-sm mb-3">
+                  Añade un toque encantador a tu hogar mientras mantienes tu
+                  teléfono seguro y a mano.
+                </p>
+                <div class="flex items-center justify-between mb-4">
+                  <span class="font-poppins font-bold text-xl text-primary">
+                    $3.500
+                  </span>
+                  <div class="flex items-center text-xs text-text-secondary">
+                    <svg
+                      class="w-4 h-4 mr-1 text-accent"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                    En stock
+                  </div>
+                </div>
+                <a
+                  href="dgatotel.html"
+                  class="w-full bg-accent text-white px-4 py-2 rounded-lg font-poppins font-medium hover:bg-accent-600 transition-colors duration-200 text-center block"
+                >
+                  Ver Producto
+                </a>
+              </div>
+
+              <!-- Producto 32 - Llavero Rust -->
+              <div
+                class="product-card card group hover:shadow-xl transition-all duration-300 cursor-pointer"
+                data-category="gaming"
+                data-material="pla"
+                data-price="2.800"
+                data-complexity="basico"
+                onclick="window.location.href='drustllavero.html'"
+              >
+                <div class="relative overflow-hidden rounded-lg mb-4">
+                  <img
+                    src="../public/img/catalogo/llaverorust/llaverorust.webp"
+                    alt="Llavero Rust"
+                    class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                    onerror="this.src='https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                  />
+                  <div
+                    class="absolute top-3 left-3 bg-primary text-white px-2 py-1 rounded-full text-xs font-medium"
+                  >
+                    PLA
+                  </div>
+                  <div
+                    class="absolute bottom-3 right-3 bg-secondary-900 bg-opacity-80 text-white px-2 py-1 rounded-full text-xs flex items-center"
+                  >
+                    <svg
+                      class="w-3 h-3 mr-1"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        d="M10 2L3 7v11a1 1 0 001 1h3v-7h6v7h3a1 1 0 001-1V7l-7-5z"
+                      />
+                    </svg>
+                    1h
+                  </div>
+                </div>
+                <h3 class="font-poppins font-semibold text-lg mb-2">
+                  Llavero Rust
+                </h3>
+                <p class="text-text-secondary text-sm mb-3">
+                  Muestra tu afición a Rust con un llavero duradero y diseño
+                  atractivo exclusivo para gamers.
+                </p>
+                <div class="flex items-center justify-between mb-4">
+                  <span class="font-poppins font-bold text-xl text-primary"
+                    >$2.800</span
+                  >
+                  <div class="flex items-center text-xs text-text-secondary">
+                    <svg
+                      class="w-4 h-4 mr-1 text-accent"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                    En stock
+                  </div>
+                </div>
+                <a
+                  href="drustllavero.html"
+                  class="w-full bg-accent text-white px-4 py-2 rounded-lg font-poppins font-medium hover:bg-accent-600 transition-colors duration-200 text-center block"
+                  >Ver Producto</a
+                >
+              </div>
+
+              <!-- Producto 33 - Llavero Baloncesto -->
+              <div
+                class="product-card card group hover:shadow-xl transition-all duration-300 cursor-pointer"
+                data-category="deportes"
+                data-material="pla"
+                data-price="3.000"
+                data-complexity="basico"
+                onclick="window.location.href='dbaloncesto.html'"
+              >
+                <div class="relative overflow-hidden rounded-lg mb-4">
+                  <img
+                    src="../public/img/catalogo/llaverobasquetball/llaverobasquetball.webp"
+                    alt="Llavero Baloncesto"
+                    class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                    onerror="this.src='https://images.unsplash.com/photo-1574629810360-7efbbe195018?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                  />
+                  <div
+                    class="absolute top-3 left-3 bg-primary text-white px-2 py-1 rounded-full text-xs font-medium"
+                  >
+                    PLA
+                  </div>
+                  <div
+                    class="absolute bottom-3 right-3 bg-secondary-900 bg-opacity-80 text-white px-2 py-1 rounded-full text-xs flex items-center"
+                  >
+                    <svg
+                      class="w-3 h-3 mr-1"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        d="M10 2L3 7v11a1 1 0 001 1h3v-7h6v7h3a1 1 0 001-1V7l-7-5z"
+                      />
+                    </svg>
+                    1h
+                  </div>
+                </div>
+                <h3 class="font-poppins font-semibold text-lg mb-2">
+                  Llavero Baloncesto
+                </h3>
+                <p class="text-text-secondary text-sm mb-3">
+                  Lleva tu pasión por el baloncesto siempre contigo con este
+                  llavero deportivo atractivo y duradero.
+                </p>
+                <div class="flex items-center justify-between mb-4">
+                  <span class="font-poppins font-bold text-xl text-primary">
+                    $3.000
+                  </span>
+                  <div class="flex items-center text-xs text-text-secondary">
+                    <svg
+                      class="w-4 h-4 mr-1 text-accent"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                    En stock
+                  </div>
+                </div>
+                <a
+                  href="dbaloncesto.html"
+                  class="w-full bg-accent text-white px-4 py-2 rounded-lg font-poppins font-medium hover:bg-accent-600 transition-colors duration-200 text-center block"
+                >
+                  Ver Producto
+                </a>
+              </div>
+
+              <!-- Producto 34 - Caja Hot Wheels -->
+              <div
+                class="product-card card group hover:shadow-xl transition-all duration-300 cursor-pointer"
+                data-category="coleccionables"
+                data-material="pla"
+                data-price="5.800"
+                data-complexity="intermedio"
+                onclick="window.location.href='dhotwheels.html'"
+              >
+                <div class="relative overflow-hidden rounded-lg mb-4">
+                  <img
+                    src="../public/img/catalogo/cajamodularhotwheels/cajamodularhotwheels.webp"
+                    alt="Caja Hot Wheels"
+                    class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                    onerror="this.src='https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                  />
+                  <div
+                    class="absolute top-3 left-3 bg-primary text-white px-2 py-1 rounded-full text-xs font-medium"
+                  >
+                    PLA
+                  </div>
+                  <div
+                    class="absolute bottom-3 right-3 bg-secondary-900 bg-opacity-80 text-white px-2 py-1 rounded-full text-xs flex items-center"
+                  >
+                    <svg
+                      class="w-3 h-3 mr-1"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        d="M10 2L3 7v11a1 1 0 001 1h3v-7h6v7h3a1 1 0 001-1V7l-7-5z"
+                      />
+                    </svg>
+                    4h
+                  </div>
+                </div>
+                <h3 class="font-poppins font-semibold text-lg mb-2">
+                  Caja Hot Wheels
+                </h3>
+                <p class="text-text-secondary text-sm mb-3">
+                  Guarda y exhibe tus autos Hot Wheels con un sistema modular
+                  práctico y estéticamente atractivo.
+                </p>
+                <div class="flex items-center justify-between mb-4">
+                  <span class="font-poppins font-bold text-xl text-primary"
+                    >$5.800</span
+                  >
+                  <div class="flex items-center text-xs text-text-secondary">
+                    <svg
+                      class="w-4 h-4 mr-1 text-accent"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                    En stock
+                  </div>
+                </div>
+                <a
+                  href="dhotwheels.html"
+                  class="w-full bg-accent text-white px-4 py-2 rounded-lg font-poppins font-medium hover:bg-accent-600 transition-colors duration-200 text-center block"
+                  >Ver Producto</a
+                >
+              </div>
+
+              <!-- Producto 35 - Porta incienso -->
+              <div
+                class="product-card card group hover:shadow-xl transition-all duration-300 cursor-pointer"
+                data-category="hogar"
+                data-material="pla"
+                data-price="3.800"
+                data-complexity="intermedio"
+                onclick="window.location.href='dincienso.html'"
+              >
+                <div class="relative overflow-hidden rounded-lg mb-4">
+                  <img
+                    src="../public/img/catalogo/soporteinciensovertical/soporteinciensovertical.jpg"
+                    alt="Porta incienso"
+                    class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                    onerror="this.src='https://images.unsplash.com/photo-1606800052052-a08af7148866?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                  />
+                  <div
+                    class="absolute top-3 left-3 bg-primary text-white px-2 py-1 rounded-full text-xs font-medium"
+                  >
+                    PLA
+                  </div>
+                  <div
+                    class="absolute bottom-3 right-3 bg-secondary-900 bg-opacity-80 text-white px-2 py-1 rounded-full text-xs flex items-center"
+                  >
+                    <svg
+                      class="w-3 h-3 mr-1"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        d="M10 2L3 7v11a1 1 0 001 1h3v-7h6v7h3a1 1 0 001-1V7l-7-5z"
+                      />
+                    </svg>
+                    2h
+                  </div>
+                </div>
+                <h3 class="font-poppins font-semibold text-lg mb-2">
+                  Porta Incienso Vertical
+                </h3>
+                <p class="text-text-secondary text-sm mb-3">
+                  Disfruta de aromaterapia mientras decoras tu hogar con un
+                  porta incienso vertical funcional y estético.
+                </p>
+                <div class="flex items-center justify-between mb-4">
+                  <span class="font-poppins font-bold text-xl text-primary">
+                    $3.800
+                  </span>
+                  <div class="flex items-center text-xs text-text-secondary">
+                    <svg
+                      class="w-4 h-4 mr-1 text-accent"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                    En stock
+                  </div>
+                </div>
+                <a
+                  href="dincienso.html"
+                  class="w-full bg-accent text-white px-4 py-2 rounded-lg font-poppins font-medium hover:bg-accent-600 transition-colors duration-200 text-center block"
+                >
+                  Ver Producto
+                </a>
+              </div>
+
+              <!-- Producto 36 - Llavero Castigador -->
+              <div
+                class="product-card card group hover:shadow-xl transition-all duration-300 cursor-pointer"
+                data-category="coleccionables"
+                data-material="pla"
+                data-price="3.200"
+                data-complexity="intermedio"
+                onclick="window.location.href='dcastigador.html'"
+                class="product-card card group hover:shadow-xl transition-all duration-300 cursor-pointer"
+                data-category="coleccionables"
+                data-material="pla"
+                data-price="3.200"
+                data-complexity="intermedio"
+                onclick="window.location.href='dcastigador.html'"
+              >
+                <div class="relative overflow-hidden rounded-lg mb-4">
+                  <img
+                    src="../public/img/catalogo/llaverocastigador/llaverocastigador.webp"
+                    alt="Llavero Castigador"
+                    class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                    onerror="this.src='https://images.unsplash.com/photo-1633613286848-e6f43bbafb8d?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                  />
+                  <div
+                    class="absolute top-3 left-3 bg-primary text-white px-2 py-1 rounded-full text-xs font-medium"
+                  >
+                    PLA
+                  </div>
+                  <div
+                    class="absolute bottom-3 right-3 bg-secondary-900 bg-opacity-80 text-white px-2 py-1 rounded-full text-xs flex items-center"
+                  >
+                    <svg
+                      class="w-3 h-3 mr-1"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        d="M10 2L3 7v11a1 1 0 001 1h3v-7h6v7h3a1 1 0 001-1V7l-7-5z"
+                      />
+                    </svg>
+                    2h
+                  </div>
+                </div>
+                <h3 class="font-poppins font-semibold text-lg mb-2">
+                  Llavero Castigador
+                </h3>
+                <p class="text-text-secondary text-sm mb-3">
+                  Porta con orgullo este llavero del Castigador, un símbolo
+                  icónico para fanáticos de la acción.
+                </p>
+                <div class="flex items-center justify-between mb-4">
+                  <span class="font-poppins font-bold text-xl text-primary"
+                    >$3.200</span
+                  >
+                  <div class="flex items-center text-xs text-text-secondary">
+                    <svg
+                      class="w-4 h-4 mr-1 text-accent"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                    En stock
+                  </div>
+                </div>
+                <a
+                  href="dcastigador.html"
+                  class="w-full bg-accent text-white px-4 py-2 rounded-lg font-poppins font-medium hover:bg-accent-600 transition-colors duration-200 text-center block"
+                  >Ver Producto</a
+                >
+              </div>
+
+              <!-- Producto 37 - Soporte DualSense -->
+              <div
+                class="product-card card group hover:shadow-xl transition-all duration-300 cursor-pointer"
+                data-category="gaming"
+                data-material="pla"
+                data-price="6.800"
+                data-complexity="avanzado"
+                onclick="window.location.href='ddualsense.html'"
+              >
+                <div class="relative overflow-hidden rounded-lg mb-4">
+                  <img
+                    src="../public/img/catalogo/mandopersonalizadops5/mandopersonalizadops5.webp"
+                    alt="Soporte DualSense"
+                    class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                    onerror="this.src='https://images.unsplash.com/photo-1607853202273-797f1c22a38e?q=80&w=2827&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                  />
+                  <div
+                    class="absolute top-3 left-3 bg-primary text-white px-2 py-1 rounded-full text-xs font-medium"
+                  >
+                    PLA
+                  </div>
+                  <div
+                    class="absolute bottom-3 right-3 bg-secondary-900 bg-opacity-80 text-white px-2 py-1 rounded-full text-xs flex items-center"
+                  >
+                    <svg
+                      class="w-3 h-3 mr-1"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        d="M10 2L3 7v11a1 1 0 001 1h3v-7h6v7h3a1 1 0 001-1V7l-7-5z"
+                      />
+                    </svg>
+                    4h
+                  </div>
+                </div>
+                <h3 class="font-poppins font-semibold text-lg mb-2">
+                  Soporte DualSense PS1
+                </h3>
+                <p class="text-text-secondary text-sm mb-3">
+                  Exhibe tu mando con un soporte temático que celebra grandes
+                  íconos de la historia PlayStation.
+                </p>
+                <div class="flex items-center justify-between mb-4">
+                  <span class="font-poppins font-bold text-xl text-primary">
+                    $6.800
+                  </span>
+                  <div class="flex items-center text-xs text-text-secondary">
+                    <svg
+                      class="w-4 h-4 mr-1 text-accent"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                    En stock
+                  </div>
+                </div>
+                <a
+                  href="ddualsense.html"
+                  class="w-full bg-accent text-white px-4 py-2 rounded-lg font-poppins font-medium hover:bg-accent-600 transition-colors duration-200 text-center block"
+                >
+                  Ver Producto
+                </a>
+              </div>
+
+              <!-- Producto 38 - Figuras gatos -->
+              <div
+                class="product-card card group hover:shadow-xl transition-all duration-300 cursor-pointer"
+                data-category="hogar"
+                data-material="pla"
+                data-price="4.200"
+                data-complexity="intermedio"
+                onclick="window.location.href='dgatos.html'"
+              >
+                <div class="relative overflow-hidden rounded-lg mb-4">
+                  <img
+                    src="../public/img/catalogo/parejadegatos/parejadegatos.webp"
+                    alt="Figuras gatos"
+                    class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                    onerror="this.src='https://images.unsplash.com/photo-1606800052052-a08af7148866?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                  />
+                  <div
+                    class="absolute top-3 left-3 bg-primary text-white px-2 py-1 rounded-full text-xs font-medium"
+                  >
+                    PLA
+                  </div>
+                  <div
+                    class="absolute bottom-3 right-3 bg-secondary-900 bg-opacity-80 text-white px-2 py-1 rounded-full text-xs flex items-center"
+                  >
+                    <svg
+                      class="w-3 h-3 mr-1"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        d="M10 2L3 7v11a1 1 0 001 1h3v-7h6v7h3a1 1 0 001-1V7l-7-5z"
+                      />
+                    </svg>
+                    3h
+                  </div>
+                </div>
+                <h3 class="font-poppins font-semibold text-lg mb-2">
+                  Pareja de Gatos Blanco/Negro
+                </h3>
+                <p class="text-text-secondary text-sm mb-3">
+                  Añade estilo y ternura a tu hogar con estas figuras
+                  decorativas de gatos contrastantes hermosas.
+                </p>
+                <div class="flex items-center justify-between mb-4">
+                  <span class="font-poppins font-bold text-xl text-primary">
+                    $4.200
+                  </span>
+                  <div class="flex items-center text-xs text-text-secondary">
+                    <svg
+                      class="w-4 h-4 mr-1 text-accent"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                    En stock
+                  </div>
+                </div>
+                <a
+                  href="dgatos.html"
+                  class="w-full bg-accent text-white px-4 py-2 rounded-lg font-poppins font-medium hover:bg-accent-600 transition-colors duration-200 text-center block"
+                >
+                  Ver Producto
+                </a>
+              </div>
+
+              <!-- Producto 39 - Porta llaves garaje -->
+              <div
+                class="product-card card group hover:shadow-xl transition-all duration-300 cursor-pointer"
+                data-category="hogar"
+                data-material="pla"
+                data-price="3.000"
+                data-complexity="basico"
+                onclick="window.location.href='dportallaves.html'"
+              >
+                <div class="relative overflow-hidden rounded-lg mb-4">
+                  <img
+                    src="../public/img/catalogo/portallavesgaraje/portallavesgaraje.webp"
+                    alt="Porta llaves garaje"
+                    class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                    onerror="this.src='https://images.unsplash.com/photo-1606800052052-a08af7148866?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                  />
+                  <div
+                    class="absolute top-3 left-3 bg-primary text-white px-2 py-1 rounded-full text-xs font-medium"
+                  >
+                    PLA
+                  </div>
+                  <div
+                    class="absolute bottom-3 right-3 bg-secondary-900 bg-opacity-80 text-white px-2 py-1 rounded-full text-xs flex items-center"
+                  >
+                    <svg
+                      class="w-3 h-3 mr-1"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        d="M10 2L3 7v11a1 1 0 001 1h3v-7h6v7h3a1 1 0 001-1V7l-7-5z"
+                      />
+                    </svg>
+                    1h
+                  </div>
+                </div>
+                <h3 class="font-poppins font-semibold text-lg mb-2">
+                  Porta Llaves Garaje
+                </h3>
+                <p class="text-text-secondary text-sm mb-3">
+                  Organiza y asegura tus llaves de garaje con un accesorio
+                  práctico y visualmente atractivo.
+                </p>
+                <div class="flex items-center justify-between mb-4">
+                  <span class="font-poppins font-bold text-xl text-primary">
+                    $3.000
+                  </span>
+                  <div class="flex items-center text-xs text-text-secondary">
+                    <svg
+                      class="w-4 h-4 mr-1 text-accent"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                    En stock
+                  </div>
+                </div>
+                <a
+                  href="dportallaves.html"
+                  class="w-full bg-accent text-white px-4 py-2 rounded-lg font-poppins font-medium hover:bg-accent-600 transition-colors duration-200 text-center block"
+                >
+                  Ver Producto
+                </a>
+              </div>
+            </div>
+
+            <!-- cargar más productos
+                <div class="text-center">
+                  <button id="load-more" class="btn-primary px-8 py-3">
+                  Cargar Más Productos
+                  </button>
+                </div> -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- suscripción a newsletter -->
+    <section class="py-20 bg-primary text-white">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="font-poppins font-bold text-4xl mb-4">
+          Mantente al día con PixelForge
+        </h2>
+        <p class="text-xl mb-8 text-primary-100">
+          3D printing tips y novedades gaming directo a tu inbox
+        </p>
+
+        <form
+          action="https://formspree.io/f/xrblavba"
+          method="POST"
+          class="flex flex-col sm:flex-row gap-4 max-w-md mx-auto"
+        >
+          <input
+            type="email"
+            name="email"
+            placeholder="tu@email.com"
+            required
+            class="flex-1 px-4 py-3 rounded-lg text-text-primary focus:ring-2 focus:ring-accent focus:outline-none"
+          />
+          <input
+            type="hidden"
+            name="_subject"
+            value="Nueva suscripción a newsletter"
+          />
+          <input type="hidden" name="_template" value="table" />
+          <button
+            type="submit"
+            class="bg-accent text-white px-6 py-3 rounded-lg font-poppins font-semibold hover:bg-accent-600 transition-colors duration-200"
+          >
+            Suscribirse
+          </button>
+        </form>
+
+        <p class="text-sm text-primary-200 mt-4">
+          Sin spam, solo contenido valioso. Cancela cuando quieras.
+        </p>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-secondary text-white py-16">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid md:grid-cols-4 gap-8">
+          <!-- Brand -->
+          <div class="md:col-span-2">
+            <div class="flex items-center space-x-2 mb-4">
+              <svg
+                class="w-8 h-8 text-primary"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"
+                />
+              </svg>
+              <span class="font-poppins font-bold text-xl">PixelForge</span>
+            </div>
+            <p class="text-gray-300 mb-6 max-w-md">
+              Transformamos ideas digitales en realidad física. No es magia, es
+              PixelForge.
+            </p>
+            <div class="flex space-x-4">
+              <a
+                href="https://instagram.com/pixelforge"
+                class="text-gray-400 hover:text-primary transition-colors duration-200"
+              >
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                  <path
+                    d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 6.62 5.367 11.987 11.988 11.987s11.987-5.367 11.987-11.987C24.004 5.367 18.637.001 12.017.001zM8.449 16.988c-1.297 0-2.448-.49-3.323-1.297C4.198 14.895 3.708 13.744 3.708 12.447s.49-2.448 1.418-3.323c.875-.807 2.026-1.297 3.323-1.297s2.448.49 3.323 1.297c.928.875 1.418 2.026 1.418 3.323s-.49 2.448-1.418 3.244c-.875.807-2.026 1.297-3.323 1.297z"
+                  />
+                </svg>
+              </a>
+              <a
+                href="https://facebook.com/pixelforge"
+                class="text-gray-400 hover:text-primary transition-colors duration-200"
+              >
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                  <path
+                    d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"
+                  />
+                </svg>
+              </a>
+              <a
+                href="https://twitter.com/pixelforge"
+                class="text-gray-400 hover:text-primary transition-colors duration-200"
+              >
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                  <path
+                    d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Quick Links -->
+          <div>
+            <h3 class="font-poppins font-semibold text-lg mb-4">
+              Enlaces Rápidos
+            </h3>
+            <ul class="space-y-2">
+              <li>
+                <a
+                  href="product_catalog.html"
+                  class="text-gray-300 hover:text-primary transition-colors duration-200"
+                  >Catálogo</a
+                >
+              </li>
+              <li>
+                <a
+                  href="custom_design_service.html"
+                  class="text-gray-300 hover:text-primary transition-colors duration-200"
+                  >Personalización</a
+                >
+              </li>
+              <li>
+                <a
+                  href="about_us.html"
+                  class="text-gray-300 hover:text-primary transition-colors duration-200"
+                  >Nosotros</a
+                >
+              </li>
+              <li>
+                <a
+                  href="contact_hub.html"
+                  class="text-gray-300 hover:text-primary transition-colors duration-200"
+                  >Contacto</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Contact Info -->
+          <div>
+            <h3 class="font-poppins font-semibold text-lg mb-4">Contacto</h3>
+            <ul class="space-y-2 text-gray-300">
+              <li class="flex items-center">
+                <svg
+                  class="w-5 h-5 mr-2"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                  />
+                </svg>
+                pixelforge@gmail.com
+              </li>
+              <li class="flex items-center">
+                <svg
+                  class="w-5 h-5 mr-2"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+                  />
+                </svg>
+                +56 9 8308 1219
+              </li>
+              <li class="flex items-center">
+                <svg
+                  class="w-5 h-5 mr-2"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                  />
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                  />
+                </svg>
+                Melipilla Culipran, Chile
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div
+          class="border-t border-gray-700 mt-12 pt-8 text-center text-gray-400"
+        >
+          <p>&copy; 2025 PixelForge. Todos los derechos reservados.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+      // Mobile menu toggle
+      document
+        .getElementById("mobile-menu-btn")
+        .addEventListener("click", function () {
+          const mobileMenu = document.getElementById("mobile-menu");
+          mobileMenu.classList.toggle("hidden");
+        });
+
+      // Mobile filter toggle
+      document
+        .getElementById("filter-toggle")
+        .addEventListener("click", function () {
+          const filterPanel = document.getElementById("filter-panel");
+          filterPanel.classList.toggle("hidden");
+        });
+
+      // Filter functionality
+      function filterProducts() {
+        const searchTerm = document
+          .getElementById("search-input")
+          .value.toLowerCase();
+        const selectedCategories = Array.from(
+          document.querySelectorAll(".category-filter:checked")
+        ).map((cb) => cb.value);
+        const selectedMaterials = Array.from(
+          document.querySelectorAll(".material-filter:checked")
+        ).map((cb) => cb.value);
+        const selectedComplexity = Array.from(
+          document.querySelectorAll(".complexity-filter:checked")
+        ).map((cb) => cb.value);
+        const selectedPriceRange = document.querySelector(
+          'input[name="price-range"]:checked'
+        )?.value;
+
+        const productCards = document.querySelectorAll(".product-card");
+        let visibleCount = 0;
+
+        productCards.forEach((card) => {
+          const category = card.dataset.category;
+          const material = card.dataset.material;
+          const price = parseInt(card.dataset.price);
+          const complexity = card.dataset.complexity;
+          const title = card.querySelector("h3").textContent.toLowerCase();
+          const description = card.querySelector("p").textContent.toLowerCase();
+
+          let show = true;
+
+          // Search filter
+          if (
+            searchTerm &&
+            !title.includes(searchTerm) &&
+            !description.includes(searchTerm)
+          ) {
+            show = false;
+          }
+
+          // Category filter
+          if (
+            selectedCategories.length > 0 &&
+            !selectedCategories.includes(category)
+          ) {
+            show = false;
+          }
+
+          // Material filter
+          if (
+            selectedMaterials.length > 0 &&
+            !selectedMaterials.includes(material)
+          ) {
+            show = false;
+          }
+
+          // Complexity filter
+          if (
+            selectedComplexity.length > 0 &&
+            !selectedComplexity.includes(complexity)
+          ) {
+            show = false;
+          }
+
+          // Price range filter
+          if (selectedPriceRange) {
+            const [min, max] = selectedPriceRange
+              .split("-")
+              .map((p) => (p === "+" ? Infinity : parseInt(p)));
+            if (selectedPriceRange.includes("+")) {
+              if (price < min) show = false;
+            } else {
+              if (price < min || price > max) show = false;
+            }
+          }
+
+          if (show) {
+            card.style.display = "block";
+            visibleCount++;
+          } else {
+            card.style.display = "none";
+          }
+        });
+
+        document.getElementById("results-count").textContent = visibleCount;
+      }
+
+      // Add event listeners for filters
+      document
+        .getElementById("search-input")
+        .addEventListener("input", filterProducts);
+      document
+        .querySelectorAll(
+          ".category-filter, .material-filter, .complexity-filter"
+        )
+        .forEach((filter) => {
+          filter.addEventListener("change", filterProducts);
+        });
+      document
+        .querySelectorAll('input[name="price-range"]')
+        .forEach((filter) => {
+          filter.addEventListener("change", filterProducts);
+        });
+
+      // Clear filters
+      document
+        .getElementById("clear-filters")
+        .addEventListener("click", function () {
+          document.getElementById("search-input").value = "";
+          document
+            .querySelectorAll(
+              ".category-filter, .material-filter, .complexity-filter"
+            )
+            .forEach((cb) => (cb.checked = true));
+          document.querySelector(
+            'input[name="price-range"][value="0-1000"]'
+          ).checked = true;
+          filterProducts();
+        });
+
+      // Sort functionality
+      document
+        .getElementById("sort-select")
+        .addEventListener("change", function () {
+          const sortBy = this.value;
+          const grid = document.getElementById("products-grid");
+          const cards = Array.from(grid.querySelectorAll(".product-card"));
+
+          cards.sort((a, b) => {
+            switch (sortBy) {
+              case "price-low":
+                return parseInt(a.dataset.price) - parseInt(b.dataset.price);
+              case "price-high":
+                return parseInt(b.dataset.price) - parseInt(a.dataset.price);
+              case "newest":
+                return Math.random() - 0.5; // Random for demo
+              case "print-time":
+                const timeA = parseInt(
+                  a.querySelector(".absolute.bottom-3").textContent
+                );
+                const timeB = parseInt(
+                  b.querySelector(".absolute.bottom-3").textContent
+                );
+                return timeA - timeB;
+              default: // popular
+                return Math.random() - 0.5; // Random for demo
+            }
+          });
+
+          cards.forEach((card) => grid.appendChild(card));
+        });
+
+      // Load more functionality
+      document
+        .getElementById("load-more")
+        .addEventListener("click", function () {
+          // In a real application, this would load more products from the server
+          this.textContent = "Cargando...";
+          setTimeout(() => {
+            this.textContent = "Cargar Más Productos";
+            // Add animation or notification that more products were loaded
+          }, 1000);
+        });
+
+      // Smooth scrolling for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute("href"));
+          if (target) {
+            target.scrollIntoView({
+              behavior: "smooth",
+              block: "start",
+            });
+          }
+        });
+      });
+
+      // Add scroll effect to header
+      window.addEventListener("scroll", function () {
+        const header = document.querySelector("header");
+        if (window.scrollY > 100) {
+          header.classList.add("shadow-lg");
+        } else {
+          header.classList.remove("shadow-lg");
+        }
+      });
+
+      // Initialize filters on page load
+      filterProducts();
+    </script>
+    <script
+      id="dhws-dataInjector"
+      src="../public/dhws-data-injector.js"
+    ></script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // 1. Actualizar contadores de categoría
+        function updateCategoryCounts() {
+          const products = document.querySelectorAll(".product-card");
+          const counts = {
+            all: products.length,
+            gaming: 0,
+            hogar: 0,
+            soportetelefono: 0,
+            personalizados: 0,
+          };
+
+          products.forEach((product) => {
+            const category = product.dataset.category;
+            if (counts.hasOwnProperty(category)) {
+              counts[category]++;
+            }
+          });
+
+          // Actualizar los números en la interfaz
+          document.querySelectorAll(".category-count").forEach((span) => {
+            const category = span.dataset.category;
+            span.textContent = `(${counts[category]})`;
+          });
+        }
+
+        // 2. Configurar comportamiento de "Todos" en categorías
+        function setupCategoryFilters() {
+          const allCategory = document.querySelector(
+            '.category-filter[value="all"]'
+          );
+          const otherCategories = document.querySelectorAll(
+            '.category-filter:not([value="all"])'
+          );
+
+          allCategory.addEventListener("change", function () {
+            if (this.checked) {
+              otherCategories.forEach((checkbox) => {
+                checkbox.checked = false;
+              });
+            }
+            filterProducts();
+          });
+
+          otherCategories.forEach((checkbox) => {
+            checkbox.addEventListener("change", function () {
+              if (this.checked) {
+                allCategory.checked = false;
+              }
+              filterProducts();
+            });
+          });
+        }
+
+        // 3. Configurar comportamiento de "Todos" en complejidad
+        function setupComplexityFilters() {
+          const allComplexity = document.querySelector(
+            '.complexity-filter[value="all"]'
+          );
+          const otherComplexities = document.querySelectorAll(
+            '.complexity-filter:not([value="all"])'
+          );
+
+          allComplexity.addEventListener("change", function () {
+            if (this.checked) {
+              otherComplexities.forEach((checkbox) => {
+                checkbox.checked = false;
+              });
+            }
+            filterProducts();
+          });
+
+          otherComplexities.forEach((checkbox) => {
+            checkbox.addEventListener("change", function () {
+              if (this.checked) {
+                allComplexity.checked = false;
+              }
+              filterProducts();
+            });
+          });
+        }
+
+        // 4. Función principal de filtrado
+        function filterProducts() {
+          const searchTerm = document
+            .getElementById("search-input")
+            .value.toLowerCase();
+          const selectedCategories = getSelectedCategories();
+          const selectedPriceRange = document.querySelector(
+            'input[name="price-range"]:checked'
+          ).value;
+          const selectedComplexity = getSelectedComplexities();
+
+          const productCards = document.querySelectorAll(".product-card");
+          let visibleCount = 0;
+
+          productCards.forEach((card) => {
+            const category = card.dataset.category;
+            const price = parseInt(card.dataset.price);
+            const complexity = card.dataset.complexity;
+            const title = card.querySelector("h3").textContent.toLowerCase();
+            const description = card
+              .querySelector("p")
+              .textContent.toLowerCase();
+
+            let matches = true;
+
+            // Filtro por búsqueda
+            if (
+              searchTerm &&
+              !title.includes(searchTerm) &&
+              !description.includes(searchTerm)
+            ) {
+              matches = false;
+            }
+
+            // Filtro por categoría
+            if (
+              selectedCategories.length > 0 &&
+              !selectedCategories.includes(category)
+            ) {
+              matches = false;
+            }
+
+            // Filtro por precio
+            if (selectedPriceRange !== "all") {
+              const [min, max] = selectedPriceRange
+                .split("-")
+                .map((p) => (p === "+" ? Infinity : parseInt(p)));
+              if (selectedPriceRange.endsWith("+")) {
+                if (price < min) matches = false;
+              } else {
+                if (price < min || price > max) matches = false;
+              }
+            }
+
+            // Filtro por complejidad
+            if (
+              selectedComplexity.length > 0 &&
+              !selectedComplexity.includes(complexity)
+            ) {
+              matches = false;
+            }
+
+            // Mostrar/ocultar
+            card.style.display = matches ? "block" : "none";
+            if (matches) visibleCount++;
+          });
+
+          // Actualizar contador de resultados
+          document.getElementById("results-count").textContent = visibleCount;
+        }
+
+        // Helper: Obtener categorías seleccionadas
+        function getSelectedCategories() {
+          const allChecked = document.querySelector(
+            '.category-filter[value="all"]'
+          ).checked;
+          if (allChecked) return []; // "Todos" seleccionado significa no filtrar
+
+          return Array.from(
+            document.querySelectorAll(
+              '.category-filter:checked:not([value="all"])'
+            )
+          ).map((checkbox) => checkbox.value);
+        }
+
+        // Helper: Obtener complejidades seleccionadas
+        function getSelectedComplexities() {
+          const allChecked = document.querySelector(
+            '.complexity-filter[value="all"]'
+          ).checked;
+          if (allChecked) return []; // "Todos" seleccionado significa no filtrar
+
+          return Array.from(
+            document.querySelectorAll(
+              '.complexity-filter:checked:not([value="all"])'
+            )
+          ).map((checkbox) => checkbox.value);
+        }
+
+        // 5. Configurar botón "Limpiar Filtros"
+        document
+          .getElementById("clear-filters")
+          .addEventListener("click", function () {
+            // Restablecer búsqueda
+            document.getElementById("search-input").value = "";
+
+            // Restablecer categorías (solo "Todos" seleccionado)
+            document
+              .querySelectorAll(".category-filter")
+              .forEach((checkbox) => {
+                checkbox.checked = checkbox.value === "all";
+              });
+
+            // Restablecer rango de precio (solo "Todos los precios" seleccionado)
+            document.querySelector(
+              'input[name="price-range"][value="all"]'
+            ).checked = true;
+
+            // Restablecer complejidad (solo "Todos" seleccionado)
+            document
+              .querySelectorAll(".complexity-filter")
+              .forEach((checkbox) => {
+                checkbox.checked = checkbox.value === "all";
+              });
+
+            // Aplicar filtros
+            filterProducts();
+          });
+
+        // 6. Configurar ordenamiento
+        document
+          .getElementById("sort-select")
+          .addEventListener("change", function () {
+            const sortBy = this.value;
+            const grid = document.getElementById("products-grid");
+            const cards = Array.from(
+              grid.querySelectorAll('.product-card[style="display: block"]')
+            );
+
+            cards.sort((a, b) => {
+              switch (sortBy) {
+                case "price-low":
+                  return parseInt(a.dataset.price) - parseInt(b.dataset.price);
+                case "price-high":
+                  return parseInt(b.dataset.price) - parseInt(a.dataset.price);
+                // ... otros casos de ordenamiento ...
+                default:
+                  return 0;
+              }
+            });
+
+            // Reordenar en el DOM
+            cards.forEach((card) => grid.appendChild(card));
+          });
+
+        // Inicialización
+        updateCategoryCounts();
+        setupCategoryFilters();
+        setupComplexityFilters();
+
+        // Configurar eventos para filtros
+        document
+          .getElementById("search-input")
+          .addEventListener("input", filterProducts);
+        document
+          .querySelectorAll('input[name="price-range"]')
+          .forEach((radio) => {
+            radio.addEventListener("change", filterProducts);
+          });
+      });
+    </script>
+  </body>
+</html>
